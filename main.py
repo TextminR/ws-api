@@ -35,13 +35,23 @@ def findAllTexts(skip: int = 0, limit: int = 100, db: Session = Depends(get_db))
 def findTextById(textid, db: Session = Depends(get_db)):
     return crud.get_text(db, text_id=textid)
 
-@app.post("/getTextByYears/", response_model=List[schemas.Text])
-def getTextByYears(minYears: int, maxYear: int, db: Session = Depends(get_db)):
+@app.post("/getTitelBetweenYears/", response_model=List[str])
+def getTextByYears(minYear: int, maxYear: int, db: Session = Depends(get_db)):
     texts = crud.get_texts(db, skip=0, limit=100)
     text_list = []
     for text in texts:
-        if text.getYear() >= minYears and text.getYear() <= maxYear:
-            text_list.append(text)
+        if text.getYear() >= minYear and text.getYear() <= maxYear:
+            text_list.append(text.getTitel())
+
+    return text_list
+
+@app.post("/getTitelByYear/", response_model=List[str])
+def getTextByYears(year: int, db: Session = Depends(get_db)):
+    texts = crud.get_texts(db, skip=0, limit=100)
+    text_list = []
+    for text in texts:
+        if text.getYear() == year:
+            text_list.append(text.getTitel())
 
     return text_list
 
@@ -49,6 +59,56 @@ def getTextByYears(minYears: int, maxYear: int, db: Session = Depends(get_db)):
 @app.post("/createText/", response_model=schemas.Text)
 def create_text(text: schemas.TextCreate, db: Session = Depends(get_db)):
     return crud.create_text(db=db, text=text)
+
+@app.post("/getTitelByAuthor/", response_model=List[str])
+def getTextByAuthor(author: str, db: Session = Depends(get_db)):
+    texts = crud.get_texts(db, skip=0, limit=100)
+    text_list = []
+    for text in texts:
+        if text.getAutor() == author:
+            text_list.append(text.getTitel())
+
+    return text_list
+
+@app.post("/getTextByTitle/", response_model=List[str])
+def getTextByTitle(title: str, db: Session = Depends(get_db)):
+    texts = crud.get_texts(db, skip=0, limit=100)
+    text_list = []
+    for text in texts:
+        if text.getTitel() == title:
+            text_list.append(text.getText())
+
+    return text_list
+
+@app.post("/getTextByAuthor/", response_model=List[str])
+def getTextByAuthor(author: str, db: Session = Depends(get_db)):
+    texts = crud.get_texts(db, skip=0, limit=100)
+    text_list = []
+    for text in texts:
+        if text.getAutor() == author:
+            text_list.append(text.getText())
+
+    return text_list
+
+@app.post("/getTextByYear/", response_model=List[str])
+def getTextByYear(year: int, db: Session = Depends(get_db)):
+    texts = crud.get_texts(db, skip=0, limit=100)
+    text_list = []
+    for text in texts:
+        if text.getYear() == year:
+            text_list.append(text.getText())
+
+    return text_list
+
+@app.post("/getTextByYearBetween/", response_model=List[str])
+def getTextByYearBetween(minYear: int, maxYear: int, db: Session = Depends(get_db)):
+    texts = crud.get_texts(db, skip=0, limit=100)
+    text_list = []
+    for text in texts:
+        if text.getYear() >= minYear and text.getYear() <= maxYear:
+            text_list.append(text.getText())
+
+    return text_list
 
 
 @app.get("/")
