@@ -10,6 +10,7 @@ class Text(Base):
     autor = Column(String)
     titel = Column(String)
     text = Column(String)
+    year = Column(Integer)
 
     def __str__(self):
         return f"{self.id}: {self.autor} {self.titel}, {self.text} years old"
