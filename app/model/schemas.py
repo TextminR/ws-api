@@ -1,6 +1,12 @@
 from pydantic import BaseModel
 
 
+class TextMetadata(BaseModel):
+    id: int
+    autor: str
+    titel: str
+    year: int
+
 class Text(BaseModel):
     id: int
     autor: str
