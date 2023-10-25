@@ -1,8 +1,16 @@
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+import os
 
-SQLALCHEMY_DATABASE_URL = "postgresql://doadmin:AVNS_afezvE_jBMdHv9R_HpP@textminr-db-do-user-10431390-0.c.db.ondigitalocean.com:25060/textminr?sslmode=require"
+USER = os.getenv("DB_USER")
+PASSWORD = os.getenv("DB_PASSWORD")
+HOST = os.getenv("DB_HOST")
+PORT = os.getenv("DB_PORT")
+DB = os.getenv("DB_NAME")
+
+
+SQLALCHEMY_DATABASE_URL = f"postgresql://{USER}:{PASSWORD}@{HOST}:{PORT}/{DB}"
 
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL
