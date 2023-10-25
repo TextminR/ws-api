@@ -26,3 +26,19 @@ class Text(Base):
 
     def getYear(self):
         return self.year
+
+
+class Author(Base):
+    __tablename__ = "authors"
+
+    name = Column(String, primary_key=True)
+    birth_place = Column(String)
+
+    def __str__(self):
+        return f"{self.name}: {self.birthplace}"
+
+    def getName(self):
+        return self.name
+
+    def getBirthplace(self):
+        return self.birth_place

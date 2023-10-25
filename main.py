@@ -110,6 +110,13 @@ def getTextByYearBetween(minYear: int, maxYear: int, db: Session = Depends(get_d
 
     return text_list
 
+@app.post("/getBirthplaceOfAuthor/", response_model=str)
+def getBirthplaceOfAuthor(authorname: str, db: Session = Depends(get_db)):
+    birthplace = "none"
+    authorlist = crud.get_birthplace_by_author(db, authorname=authorname)
+    for author in authorlist:
+        birthplace = author.getBirthplace()
+    return birthplace
 
 @app.get("/")
 async def hello():
