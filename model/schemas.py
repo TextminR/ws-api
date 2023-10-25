@@ -1,5 +1,3 @@
-from typing import Optional
-
 from pydantic import BaseModel
 
 
@@ -8,6 +6,7 @@ class Text(BaseModel):
     autor: str
     titel: str
     text: str
+    year: int
 
     class Config:
         from_attributes = True
@@ -22,6 +21,7 @@ class TextCreate(TextBase):
     autor: str
     titel: str
     text: str
+    year: int
 
 
 class Author(BaseModel):

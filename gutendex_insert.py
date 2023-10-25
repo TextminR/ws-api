@@ -1,6 +1,5 @@
 import requests
 import psycopg2
-import re
 
 # Verbindung zur PostgreSQL-Datenbank herstellen
 connection = psycopg2.connect(
