@@ -7,6 +7,7 @@ dict_text = {}
 
 # Create a PDF reader object
 pdf_reader = PyPDF2.PdfReader(open(pdf_file_path, 'rb'))
+print(pdf_reader.metadata.author)
 
 # Initialize an empty string to store the extracted text
 pdf_text = ''
@@ -61,13 +62,3 @@ for i, part in enumerate(split_strings, start=1):
 print(dict_text)
 
 
-
-
-#tokenizer = AutoTokenizer.from_pretrained("dslim/bert-large-NER")
-#model = AutoModelForTokenClassification.from_pretrained("dslim/bert-large-NER")
-
-#nlp = pipeline("ner", model=model, tokenizer=tokenizer)
-# example = "Dominic Thiem stammt aus Lichtenwörth und begann im Alter von sechs Jahren mit dem Tennisspielen."
-
-#ner_results = nlp(pdf_text)
-#print(ner_results)
