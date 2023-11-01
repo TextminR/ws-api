@@ -25,5 +25,27 @@ class TextModel(BaseModel):
     )
 
 
+class TextMetadata(BaseModel):
+    id: Optional[PyObjectId] = Field(alias="_id", default=None)
+    autor: str = Field(...)
+    titel: str = Field(...)
+    year: Optional[float] = Field(...)
+    model_config = ConfigDict(
+        populate_by_name=True,
+        arbitrary_types_allowed=True,
+        json_schema_extra={
+            "example": {
+                "autor": "Yusuf Akalin",
+                "titel": "Mein Text",
+                "year": 2023
+            }
+        },
+    )
+
+
 class TextCollection(BaseModel):
     texts: List[TextModel]
+
+
+class TextMetadataCollection(BaseModel):
+    textdata: List[TextMetadata]
