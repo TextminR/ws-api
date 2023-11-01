@@ -1,44 +1,29 @@
-from sqlalchemy import Column, Integer, String
+from pydantic import BeforeValidator, BaseModel, Field, ConfigDict
+from typing_extensions import Annotated
+from typing import Optional, List
 
-from app.model.database import Base
-
-
-class Text(Base):
-    __tablename__ = "textdata"
-
-    id = Column(Integer, primary_key=True)
-    autor = Column(String)
-    titel = Column(String)
-    text = Column(String)
-    year = Column(Integer)
-
-    def __str__(self):
-        return f"{self.id}: {self.autor} {self.titel} {self.year}, {self.text}"
-
-    def getText(self):
-        return self.text
-
-    def getAutor(self):
-        return self.autor
-
-    def getTitel(self):
-        return self.titel
-
-    def getYear(self):
-        return self.year
+PyObjectId = Annotated[str, BeforeValidator(str)]
 
 
-class Author(Base):
-    __tablename__ = "authors"
+class TextModel(BaseModel):
+    id: Optional[PyObjectId] = Field(alias="_id", default=None)
+    autor: str = Field(...)
+    text: str = Field(...)
+    titel: str = Field(...)
+    year: Optional[float] = Field(...)
+    model_config = ConfigDict(
+        populate_by_name=True,
+        arbitrary_types_allowed=True,
+        json_schema_extra={
+            "example": {
+                "autor": "Yusuf Akalin",
+                "titel": "Mein Text",
+                "text": "Ich bin der Yusuf.",
+                "year": 2023
+            }
+        },
+    )
 
-    name = Column(String, primary_key=True)
-    birth_place = Column(String)
 
-    def __str__(self):
-        return f"{self.name}: {self.birthplace}"
-
-    def getName(self):
-        return self.name
-
-    def getBirthplace(self):
-        return self.birth_place
+class TextCollection(BaseModel):
+    texts: List[TextModel]
