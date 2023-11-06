@@ -7,7 +7,7 @@ dict_text = {}
 
 # Create a PDF reader object
 pdf_reader = PyPDF2.PdfReader(open(pdf_file_path, 'rb'))
-print(pdf_reader.metadata.author)
+#print(pdf_reader.metadata.author)
 
 # Initialize an empty string to store the extracted text
 pdf_text = ''
