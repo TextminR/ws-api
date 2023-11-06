@@ -7,6 +7,7 @@ class TextMetadata(BaseModel):
     titel: str
     year: int
 
+
 class Text(BaseModel):
     id: int
     autor: str
@@ -46,3 +47,8 @@ class AuthorBase(BaseModel):
 class AuthorCreate(AuthorBase):
     name: str
     birth_place: str
+
+
+class Extraction(BaseModel):
+    text: str
+    author: str

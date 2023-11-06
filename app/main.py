@@ -1,10 +1,11 @@
 from typing import List
 
-from fastapi import Depends, FastAPI
+from fastapi import Depends, FastAPI, File, UploadFile
 from sqlalchemy.orm import Session
 from app.model import schemas, crud
 from app.model import models
 from app.model.database import SessionLocal, engine
+from app.model.extract_text import extractFromPDF
 import uvicorn
 
 models.Base.metadata.create_all(bind=engine)
@@ -34,6 +35,11 @@ def findAllTexts(skip: int = 0, limit: int = 100, db: Session = Depends(get_db))
 def findTextById(textid, db: Session = Depends(get_db)):
     return crud.get_text(db, text_id=textid)
 
+
+@app.post("/extractFromFile/", response_model=List[schemas.Extraction])
+def extractFromFile(file: UploadFile):
+    res = extractFromPDF(file)
+    return res
 
 @app.post("/getTitelBetweenYears/", response_model=List[str])
 def getTitelBetweenYears(minYear: int, maxYear: int, db: Session = Depends(get_db)):
