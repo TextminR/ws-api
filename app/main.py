@@ -5,7 +5,6 @@ from sqlalchemy.orm import Session
 from app.model import schemas, crud
 from app.model import models
 from app.model.database import SessionLocal, engine
-from app.model.extract_text import extractFromPDF
 import uvicorn
 
 models.Base.metadata.create_all(bind=engine)
@@ -36,10 +35,10 @@ def findTextById(textid, db: Session = Depends(get_db)):
     return crud.get_text(db, text_id=textid)
 
 
-@app.post("/extractFromFile/", response_model=List[schemas.Extraction])
-def extractFromFile(file: UploadFile):
-    res = extractFromPDF(file)
-    return res
+# @app.post("/extractFromFile/", response_model=List[schemas.Extraction])
+# def extractFromFile(file: UploadFile):
+#     res = extractFromPDF(file)
+#     return res
 
 @app.post("/getTitelBetweenYears/", response_model=List[str])
 def getTitelBetweenYears(minYear: int, maxYear: int, db: Session = Depends(get_db)):
@@ -127,6 +126,33 @@ def getTextByYearBetween(minYear: int, maxYear: int, db: Session = Depends(get_d
 def deleteText(textid, db: Session = Depends(get_db)):
     crud.delete_text(db, text_id=textid)
     return "deleted"
+
+
+@app.post("/createNER_Data/", response_model=schemas.NER_Data)
+def createNER_Data(data: schemas.NER_DataCreate, db: Session = Depends(get_db)):
+    return crud.create_NER_Data(db=db, data=data)
+
+
+@app.get("/getNER_Data/", response_model=List[schemas.NER_Data])
+def getNER_Data(db: Session = Depends(get_db)):
+    return crud.get_NER_Data(db, 0, 1000)
+
+
+@app.get("/getNewsarticle/{textid}", response_model=schemas.Newsarticle)
+def get_newsarticle(textid, db: Session = Depends(get_db)):
+    res = crud.get_newsarticle(db, textid)
+    return res
+
+
+@app.get("/getNewsarticles/", response_model=List[schemas.Newsarticle])
+def get_newsarticles(db: Session = Depends(get_db)):
+    return crud.get_newsarticles(db, 0, 1000)
+
+
+@app.post("/createNewsarticle/", response_model=schemas.Newsarticle)
+def create_newsarticle(data: schemas.NewsarticleCreate, db: Session = Depends(get_db)):
+    return crud.create_newsarticle(db, data)
+
 
 @app.get("/")
 async def hello():

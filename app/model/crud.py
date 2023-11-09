@@ -1,3 +1,5 @@
+from datetime import date
+
 from sqlalchemy.orm import Session
 
 from app.model import schemas
@@ -56,7 +58,42 @@ def create_text(db: Session, text: schemas.TextCreate):
     db.refresh(db_text)
     return db_text
 
+
+def create_NER_Data(db: Session, data: schemas.NER_DataCreate):
+    db_data = models.NER_Data(prompt=data.prompt, author=data.author, date=data.date)
+    db.add(db_data)
+    db.commit()
+    db.refresh(db_data)
+    return db_data
+
+
+def get_NER_Data(db: Session, skip, limit):
+    return db.query(models.NER_Data).offset(skip).limit(limit).all()
+
+
 def delete_text(db: Session, text_id: int):
     db.query(models.Text).filter(models.Text.id == text_id).delete()
     db.commit()
     return "deleted"
+
+
+def get_newsarticles(db: Session, skip, limit):
+    return db.query(models.Newsarticle).offset(skip).limit(limit).all()
+
+
+def get_newsarticle(db: Session, text_id: int):
+    return db.query(models.Newsarticle).filter(models.Newsarticle.id == text_id).first()
+
+
+def get_newsarticle_by_date_between(db: Session, minDate: date, maxDate: date):
+    return db.query(models.Newsarticle).filter(models.Newsarticle.date >= minDate).filter(
+        models.Newsarticle.date <= maxDate).all()
+
+
+def create_newsarticle(db: Session, data: schemas.NewsarticleCreate):
+    db_data = models.Newsarticle(titel=data.titel, datum=data.datum, newspapername=data.newspapername, autor=data.autor,
+                                 text=data.text)
+    db.add(db_data)
+    db.commit()
+    db.refresh(db_data)
+    return db_data
