@@ -8,3 +8,6 @@
 {"prompt":"Das Buch \"Moby Dick\" wurde 1851 von Herman Melville geschrieben.","response":"{\n  \"author\": \"Herman Melville\",\n  \"date\": \"1851\"\n}"}
 {"prompt":"\"Die Verwandlung\" ist eine Novelle von Franz Kafka, die erstmals 1915 ver\u00f6ffentlicht wurde.","response":"{\n  \"author\": \"Franz Kafka\",\n  \"date\": \"1915\"\n}"}
 {"prompt":"Im Jahr 1925 ver\u00f6ffentlichte F. Scott Fitzgerald seinen bekannten Roman \"Der gro\u00dfe Gatsby\".","response":"{\n  \"author\": \"F. Scott Fitzgerald\",\n  \"date\": \"1925\"\n}"}
+{"prompt": "A magazine article from the summer of 2014 discusses climate change.", "response": "{\"author\": \"N/A\", \"date\": \"2014\"}"}
+{"prompt": "Dies ist ein Artikel, veroeffentlicht am 16. Februar 2014, ueber die Auswirkungen der Globalisierung.", "response": "{\"author\": \"N/A\", \"date\": \"2014\"}"}
+{"prompt": "Ein historischer \u00dcberblick von Otto von Bismarck untersucht militaerische Taktiken.", "response": "{\"author\": \"Otto von Bismarck\", \"date\": \"N/A\"}"}

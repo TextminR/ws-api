@@ -90,3 +90,19 @@
 {"prompt":"In a letter dated May 10, 1933, Albert Einstein wrote to his friend about his latest discoveries.","response":"{\n  \"author\": \"Albert Einstein\",\n  \"date\": \"May 10, 1933\"\n}"}
 {"prompt":"\"Der Prozess\" ist ein Roman von Franz Kafka, der posthum im Jahr 1925 ver\u00f6ffentlicht wurde.","response":"{\n  \"author\": \"Franz Kafka\",\n  \"date\": \"1925\"\n}"}
 {"prompt":"The book \"To Kill a Mockingbird\" was written by Harper Lee and published in 1960.","response":"{\n  \"author\": \"Harper Lee\",\n  \"date\": \"1960\"\n}"}
+{"prompt": "A biographical piece on Martin Luther King Jr. highlights his life's work.", "response": "{\"author\": \"Martin Luther King Jr.\", \"date\": \"N/A\"}"}
+{"prompt": "An lecture notes by Richard Feynman explore the fundamentals of physics.", "response": "{\"author\": \"Richard Feynman\", \"date\": \"N/A\"}"}
+{"prompt": "An analysis of classical music by Leonard Bernstein.", "response": "{\"author\": \"Leonard Bernstein\", \"date\": \"N/A\"}"}
+{"prompt": "An editorial on global economics, written by Adam Smith.", "response": "{\"author\": \"Adam Smith\", \"date\": \"N/A\"}"}
+{"prompt": "Dieses Gedicht von Heinrich Heine reflektiert romantische Gefuehle.", "response": "{\"author\": \"Heinrich Heine\", \"date\": \"N/A\"}"}
+{"prompt": "Ein kurzer Essay ueber moderne Kunst, welches aktuelle Beispiele behandelt und kritisiert.", "response": "{\"author\": \"N/A\", \"date\": \"N/A\"}"}
+{"prompt": "Dieses Gedicht, geschrieben an einem Fruehlingsmorgen 2013, beschreibt die erwachende Natur.", "response": "{\"author\": \"N/A\", \"date\": \"2013\"}"}
+{"prompt": "On the 15th of August, 1947, a declaration was made by Jawaharlal Nehru.", "response": "{\"author\": \"Jawaharlal Nehru\", \"date\": \"1947\"}"}
+{"prompt": "In diesem Gedicht von Johann Wolfgang von Goethe wird die Natur besungen.", "response": "{\"author\": \"Johann Wolfgang von Goethe\", \"date\": \"N/A\"}"}
+{"prompt": "In diesem Manuskript von Karl May werden Abenteuergeschichten erzaehlt.", "response": "{\"author\": \"Karl May\", \"date\": \"N/A\"}"}
+{"prompt": "Dieser Text wurde von Maria Schmidt am 15. August 2020 verfasst.", "response": "{\"author\": \"Maria Schmidt\", \"date\": \"2020\"}"}
+{"prompt": "A narrative about African history, authored by Chinua Achebe.", "response": "{\"author\": \"Chinua Achebe\", \"date\": \"N/A\"}"}
+{"prompt": "In diesem Artikel von Ludwig Erhard, verue6ffentlicht im Winter 2017, werden Wirtschaftsstrategien erue6rtert.", "response": "{\"author\": \"Ludwig Erhard\", \"date\": \"2017\"}"}
+{"prompt": "In dieser Ausgabe vom Mai 2018 schreibt ein der Kolumnist ueber lokale Ereignisse.", "response": "{\"author\": \"N/A\", \"date\": \"2018\"}"}
+{"prompt": "Ein Gedicht von Rilke, geschrieben in der Nacht des 23. Dezembers 2003.", "response": "{\"author\": \"Rilke\", \"date\": \"2003\"}"}
+{"prompt": "A narrative about the French Revolution, written by Victor Hugo.", "response": "{\"author\": \"Victor Hugo\", \"date\": \"N/A\"}"}
