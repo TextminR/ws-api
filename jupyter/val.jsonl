@@ -1,18 +1,18 @@
 {"prompt": "Dieser Text wurde von Thomas M\u00fcller am 25. Dezember 2019 verfasst.", "response": "{\"author\": \"Thomas M\\u00fcller\", \"date\": \"2019\"}"}
-{"prompt": "In diesem Essay von Max Frisch, datiert auf den 8. Mai 2021, werden Themen der Identit\u00e4t und Erinnerung behandelt.", "response": "{\"author\": \"Max Frisch\", \"date\": \"2021\"}"}
+{"prompt": "In diesem Essay von Max Frisch, datiert auf den 8. Mai 2021, werden Themen der Identitaet und Erinnerung behandelt.", "response": "{\"author\": \"Max Frisch\", \"date\": \"2021\"}"}
 {"prompt": "A review of classical music performances by Itzhak Perlman, written in early 2022.", "response": "{\"author\": \"Itzhak Perlman\", \"date\": \"2022\"}"}
 {"prompt": "Dieser Kommentar von Heinrich Heine, geschrieben im Dezember 2014, behandelt poetische Ansichten.", "response": "{\"author\": \"Heinrich Heine\", \"date\": \"2014\"}"}
-{"prompt": "\"Faust\", ein Drama von Johann Wolfgang von Goethe, wurde 1808 ver\u00f6ffentlicht.", "response": "{\"author\": \"Johann Wolfgang von Goethe\", \"date\": \"1808\"}"}
-{"prompt": "In diesem Artikel von Max Planck, ver\u00f6ffentlicht im Winter 2006, werden Quantenph\u00e4nomene diskutiert.", "response": "{\"author\": \"Max Planck\", \"date\": \"2006\"}"}
-{"prompt": "Eine Studie von Hannah Arendt, datiert auf den 9. Oktober 2018, besch\u00e4ftigt sich mit politischer Theorie.", "response": "{\"author\": \"Hannah Arendt\", \"date\": \"2018\"}"}
+{"prompt": "\"Faust\", ein Drama von Johann Wolfgang von Goethe, wurde 1808 veroeffentlicht.", "response": "{\"author\": \"Johann Wolfgang von Goethe\", \"date\": \"1808\"}"}
+{"prompt": "In diesem Artikel von Max Planck, veroeffentlicht im Winter 2006, werden Quantenphaenomene diskutiert.", "response": "{\"author\": \"Max Planck\", \"date\": \"2006\"}"}
+{"prompt": "Eine Studie von Hannah Arendt, datiert auf den 9. Oktober 2018, beschaeftigt sich mit politischer Theorie.", "response": "{\"author\": \"Hannah Arendt\", \"date\": \"2018\"}"}
 {"prompt": "On September 1, 1851, Herman Melville published his masterpiece, \"Moby-Dick\".", "response": "{\"author\": \"Herman Melville\", \"date\": \"1851\"}"}
-{"prompt": "\"Die Blechtrommel\", ein Roman von G\u00fcnter Grass, wurde 1959 ver\u00f6ffentlicht.", "response": "{\"author\": \"G\\u00fcnter Grass\", \"date\": \"1959\"}"}
-{"prompt": "In diesem Bericht von Konrad Adenauer, ver\u00f6ffentlicht am 15. Juni 2011, werden politische Strategien diskutiert.", "response": "{\"author\": \"Konrad Adenauer\", \"date\": \"2011\"}"}
-{"prompt": "An undated review of ecological systems by Edward O. Wilson.", "response": "{\"author\": \"Edward O. Wilson\", \"date\": \"N/A\"}"}
+{"prompt": "\"Die Blechtrommel\", ein Roman von G\u00fcnter Grass, wurde 1959 veroeffentlicht.", "response": "{\"author\": \"G\\u00fcnter Grass\", \"date\": \"1959\"}"}
+{"prompt": "In diesem Bericht von Konrad Adenauer, veroeffentlicht am 15. Juni 2011, werden politische Strategien diskutiert.", "response": "{\"author\": \"Konrad Adenauer\", \"date\": \"2011\"}"}
+{"prompt": "An review of ecological systems by Edward O. Wilson.", "response": "{\"author\": \"Edward O. Wilson\", \"date\": \"N/A\"}"}
 {"prompt": "In diesem Brief von Friedrich Schiller, datiert auf den 20. April 2003, werden k\u00fcnstlerische Freiheiten thematisiert.", "response": "{\"author\": \"Friedrich Schiller\", \"date\": \"2003\"}"}
 {"prompt": "In 1943, Antoine de Saint-Exup\u00e9ry published his famous novella \"The Little Prince\".", "response": "{\"author\": \"Antoine de Saint-Exup\\u00e9ry\", \"date\": \"1943\"}"}
-{"prompt": "\"Faust\" ist ein Drama von Johann Wolfgang von Goethe, das im Jahr 1808 ver\u00f6ffentlicht wurde.", "response": "{\"author\": \"Johann Wolfgang von Goethe\", \"date\": \"1808\"}"}
-{"prompt": "In diesem Essay von Thomas Mann, geschrieben irgendwann im Jahr 2011, werden gesellschaftliche Ver\u00e4nderungen analysiert.", "response": "{\"author\": \"Thomas Mann\", \"date\": \"2011\"}"}
+{"prompt": "\"Faust\" ist ein Drama von Johann Wolfgang von Goethe, das im Jahr 1808 veroeffentlicht wurde.", "response": "{\"author\": \"Johann Wolfgang von Goethe\", \"date\": \"1808\"}"}
+{"prompt": "In diesem Essay von Thomas Mann, geschrieben irgendwann im Jahr 2011, werden gesellschaftliche Veraenderungen analysiert.", "response": "{\"author\": \"Thomas Mann\", \"date\": \"2011\"}"}
 {"prompt": "On the 5th of July, 2005, a document was drafted by Albert Einstein.", "response": "{\"author\": \"Albert Einstein\", \"date\": \"2005\"}"}
 {"prompt": "A scientific analysis on renewable energy by Nikola Tesla, dated 31st December 2009.", "response": "{\"author\": \"Nikola Tesla\", \"date\": \"2009\"}"}
 {"prompt": "In dieser Analyse von Bertolt Brecht, verfasst im Sommer 2013, werden dramatische Techniken untersucht.", "response": "{\"author\": \"Bertolt Brecht\", \"date\": \"2013\"}"}
@@ -21,31 +21,31 @@
 {"prompt": "An investigative article about climate change, written by Naomi Klein in the winter of 2014.", "response": "{\"author\": \"Naomi Klein\", \"date\": \"2014\"}"}
 {"prompt": "In dieser Studie von Max Weber, datiert auf den 27. Mai 2009, werden soziologische Theorien untersucht.", "response": "{\"author\": \"Max Weber\", \"date\": \"2009\"}"}
 {"prompt": "A discussion on modern architecture by Frank Lloyd Wright, written in the spring of 2020.", "response": "{\"author\": \"Frank Lloyd Wright\", \"date\": \"2020\"}"}
-{"prompt": "Ein unvollst\u00e4ndig datiertes Manuskript von Bertolt Brecht, wahrscheinlich aus den 1980ern, kritisiert das Theater.", "response": "{\"author\": \"Bertolt Brecht\", \"date\": \"1980s\"}"}
-{"prompt": "A critique on postmodern art, written sometime in 2009, lacks an author attribution.", "response": "{\"author\": \"N/A\", \"date\": \"2009\"}"}
+{"prompt": "Ein unvollstaendig datiertes Manuskript von Bertolt Brecht, wahrscheinlich aus den 1980ern, kritisiert das Theater.", "response": "{\"author\": \"Bertolt Brecht\", \"date\": \"1980s\"}"}
+{"prompt": "A critique on postmodern art, written sometime in 2009, lacks an official sources.", "response": "{\"author\": \"N/A\", \"date\": \"2009\"}"}
 {"prompt": "Am 15. April 2020 wurde dieser Text von Maria Schmidt verfasst.", "response": "{\"author\": \"Maria Schmidt\", \"date\": \"2020\"}"}
-{"prompt": "Im Jahr 1920 ver\u00f6ffentlichte Franz Kafka \"Das Schloss\", eines seiner bekanntesten Werke.", "response": "{\"author\": \"Franz Kafka\", \"date\": \"1920\"}"}
-{"prompt": "Am 10. November 1782 ver\u00f6ffentlichte Wolfgang Amadeus Mozart seine Sonate Nr. 16.", "response": "{\"author\": \"Wolfgang Amadeus Mozart\", \"date\": \"1782\"}"}
+{"prompt": "Im Jahr 1920 veroeffentlichte Franz Kafka \"Das Schloss\", eines seiner bekanntesten Werke.", "response": "{\"author\": \"Franz Kafka\", \"date\": \"1920\"}"}
+{"prompt": "Am 10. November 1782 veroeffentlichte Wolfgang Amadeus Mozart seine Sonate Nr. 16.", "response": "{\"author\": \"Wolfgang Amadeus Mozart\", \"date\": \"1782\"}"}
 {"prompt": "A critique of the modern education system by John Dewey, written in early autumn 2020.", "response": "{\"author\": \"John Dewey\", \"date\": \"2020\"}"}
 {"prompt": "Am 25. Dezember 1999 schrieb Angela Merkel diesen Text.", "response": "{\"author\": \"Angela Merkel\", \"date\": \"1999\"}"}
-{"prompt": "A magazine article from the summer of 2014 discusses climate change, author unknown.", "response": "{\"author\": \"N/A\", \"date\": \"2014\"}"}
+{"prompt": "A magazine article from the summer of 2014 discusses climate change.", "response": "{\"author\": \"N/A\", \"date\": \"2014\"}"}
 {"prompt": "Dieser Kommentar von Hannah Arendt, geschrieben am 23. September 2008, behandelt politische Philosophie.", "response": "{\"author\": \"Hannah Arendt\", \"date\": \"2008\"}"}
 {"prompt": "In 1937, J.R.R. Tolkien published his famous novel \"The Hobbit\".", "response": "{\"author\": \"J.R.R. Tolkien\", \"date\": \"1937\"}"}
 {"prompt": "\"Animal Farm\" is a novel by George Orwell, published in 1945.", "response": "{\"author\": \"George Orwell\", \"date\": \"1945\"}"}
-{"prompt": "In dieser Erz\u00e4hlung von Schiller, datiert auf den sp\u00e4ten Herbst 2005, geht es um historische Ereignisse.", "response": "{\"author\": \"Schiller\", \"date\": \"2005\"}"}
+{"prompt": "In dieser Erzaehlung von Schiller, datiert auf den spaeten Herbst 2005, geht es um historische Ereignisse.", "response": "{\"author\": \"Schiller\", \"date\": \"2005\"}"}
 {"prompt": "In diesem historischen \u00dcberblick von Otto von Bismarck, verfasst am 5. Februar 2008, werden Kriegsstrategien diskutiert.", "response": "{\"author\": \"Otto von Bismarck\", \"date\": \"2008\"}"}
-{"prompt": "Dieser Artikel von Heinrich B\u00f6ll, verfasst im Herbst 2010, kritisiert politische Entscheidungen.", "response": "{\"author\": \"Heinrich B\u00f6ll\", \"date\": \"2010\"}"}
+{"prompt": "Dieser Artikel von Heinrich Boell, verfasst im Herbst 2010, kritisiert politische Entscheidungen.", "response": "{\"author\": \"Heinrich Boell\", \"date\": \"2010\"}"}
 {"prompt": "The book \"The Great Gatsby\" was written by F. Scott Fitzgerald and published on April 10, 1925.", "response": "{\"author\": \"F. Scott Fitzgerald\", \"date\": \"1925\"}"}
-{"prompt": "Am 24. Februar 1920 wurde Adolf Hitlers Buch \"Mein Kampf\" ver\u00f6ffentlicht.", "response": "{\"author\": \"Adolf Hitler\", \"date\": \"1920\"}"}
-{"prompt": "Dies ist ein anonymer Artikel, ver\u00f6ffentlicht am 16. Februar 2014, \u00fcber die Auswirkungen der Globalisierung.", "response": "{\"author\": \"N/A\", \"date\": \"2014\"}"}
+{"prompt": "Am 24. Februar 1920 wurde Adolf Hitlers Buch \"Mein Kampf\" veroeffentlicht.", "response": "{\"author\": \"Adolf Hitler\", \"date\": \"1920\"}"}
+{"prompt": "Dies ist ein Artikel, veroeffentlicht am 16. Februar 2014, \u00fcber die Auswirkungen der Globalisierung.", "response": "{\"author\": \"N/A\", \"date\": \"2014\"}"}
 {"prompt": "On 29th February 2020, this text was authored by Michael Davis.", "response": "{\"author\": \"Michael Davis\", \"date\": \"2020\"}"}
-{"prompt": "Dieser Essay von Friedrich Nietzsche, geschrieben im Winter 2010, besch\u00e4ftigt sich mit der Philosophie der Existenz.", "response": "{\"author\": \"Friedrich Nietzsche\", \"date\": \"2010\"}"}
-{"prompt": "Ein historischer \u00dcberblick von Otto von Bismarck, ohne genaues Datum, untersucht milit\u00e4rische Taktiken.", "response": "{\"author\": \"Otto von Bismarck\", \"date\": \"N/A\"}"}
-{"prompt": "Im Jahr 1925 wurde der Roman \"Der gro\u00dfe Gatsby\" von F. Scott Fitzgerald ver\u00f6ffentlicht.", "response": "{\"author\": \"F. Scott Fitzgerald\", \"date\": \"1925\"}"}
+{"prompt": "Dieser Essay von Friedrich Nietzsche, geschrieben im Winter 2010, beschaeftigt sich mit der Philosophie der Existenz.", "response": "{\"author\": \"Friedrich Nietzsche\", \"date\": \"2010\"}"}
+{"prompt": "Ein historischer \u00dcberblick von Otto von Bismarck untersucht militaerische Taktiken.", "response": "{\"author\": \"Otto von Bismarck\", \"date\": \"N/A\"}"}
+{"prompt": "Im Jahr 1925 wurde der Roman \"Der gro\u00dfe Gatsby\" von F. Scott Fitzgerald veroeffentlicht.", "response": "{\"author\": \"F. Scott Fitzgerald\", \"date\": \"1925\"}"}
 {"prompt": "In 1949, George Orwell released his dystopian novel \"1984\".", "response": "{\"author\": \"George Orwell\", \"date\": \"1949\"}"}
-{"prompt": "An article with no clear date, written by Virginia Woolf, examines the role of women in literature.", "response": "{\"author\": \"Virginia Woolf\", \"date\": \"N/A\"}"}
-{"prompt": "Eine Studie \u00fcber die Romantik, verfasst von Novalis im sp\u00e4ten 1998, beleuchtet literarische Trends.", "response": "{\"author\": \"Novalis\", \"date\": \"1998\"}"}
+{"prompt": "An article, written by Virginia Woolf, examines the role of women in literature.", "response": "{\"author\": \"Virginia Woolf\", \"date\": \"N/A\"}"}
+{"prompt": "Eine Studie \u00fcber die Romantik, verfasst von Novalis im spaeten 1998, beleuchtet literarische Trends.", "response": "{\"author\": \"Novalis\", \"date\": \"1998\"}"}
 {"prompt": "A research article on neuroscience, authored by Oliver Sacks in early 2012, discusses new findings.", "response": "{\"author\": \"Oliver Sacks\", \"date\": \"2012\"}"}
 {"prompt": "A novel excerpt by Oscar Wilde, dated 8th September 2008, satirizes Victorian society.", "response": "{\"author\": \"Oscar Wilde\", \"date\": \"2008\"}"}
 {"prompt": "In diesem unbetitelten Manuskript, geschrieben von Franz Kafka im Winter 2016, werden gesellschaftliche Themen erforscht.", "response": "{\"author\": \"Franz Kafka\", \"date\": \"2016\"}"}
-{"prompt": "Dieser undatierte Brief von Goethe enth\u00e4lt Reflexionen \u00fcber das menschliche Dasein.", "response": "{\"author\": \"Goethe\", \"date\": \"N/A\"}"}
+{"prompt": "Dieser Brief von Goethe enthaelt Reflexionen \u00fcber das menschliche Dasein.", "response": "{\"author\": \"Goethe\", \"date\": \"N/A\"}"}
