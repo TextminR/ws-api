@@ -5,7 +5,7 @@
 {"prompt": "On the 5th of July, 2005, a document was drafted by Albert Einstein.", "response": "{\"author\": \"Albert Einstein\", \"date\": \"2005\"}"}
 {"prompt": "This text was written by John Doe on 12th of March, 2020.", "response": "{\"author\": \"John Doe\", \"date\": \"2020\"}"}
 {"prompt": "In 1851, Herman Melville published his famous novel \"Moby Dick\".", "response": "{\"author\": \"Herman Melville\", \"date\": \"1851\"}"}
-{"prompt": "Am 15. August 1947 ver\u00f6ffentlichte Mahatma Gandhi einen Brief.", "response": "{\"author\": \"Mahatma Gandhi\", \"date\": \"1947\"}"}
+{"prompt": "Am 15. August 1947 veroeffentlichte Mahatma Gandhi einen Brief.", "response": "{\"author\": \"Mahatma Gandhi\", \"date\": \"1947\"}"}
 {"prompt": "On April 14, 1939, John Steinbeck published his novel \"The Grapes of Wrath\".", "response": "{\"author\": \"John Steinbeck\", \"date\": \"1939\"}"}
 {"prompt": "This book was written by George Orwell in 1949.", "response": "{\"author\": \"George Orwell\", \"date\": \"1949\"}"}
 {"prompt": "Ernest Hemingway wrote \"The Old Man and the Sea\" in 1952.", "response": "{\"author\": \"Ernest Hemingway\", \"date\": \"1952\"}"}
@@ -16,79 +16,79 @@
 {"prompt": "The famous novel \"To Kill a Mockingbird\" was published by Harper Lee on July 11, 1960.", "response": "{\"author\": \"Harper Lee\", \"date\": \"1960\"}"}
 {"prompt": "The book \"Pride and Prejudice\" was written by Jane Austen and published in 1813.", "response": "{\"author\": \"Jane Austen\", \"date\": \"1813\"}"}
 {"prompt": "Am 14. Februar 2019 wurde dieser Text von Daniel Meyer geschrieben.", "response": "{\"author\": \"Daniel Meyer\", \"date\": \"2019\"}"}
-{"prompt": "Am 10. November 1782 ver\u00f6ffentlichte Wolfgang Amadeus Mozart seine Sonate Nr. 16.", "response": "{\"author\": \"Wolfgang Amadeus Mozart\", \"date\": \"1782\"}"}
+{"prompt": "Am 10. November 1782 veroeffentlichte Wolfgang Amadeus Mozart seine Sonate Nr. 16.", "response": "{\"author\": \"Wolfgang Amadeus Mozart\", \"date\": \"1782\"}"}
 {"prompt": "On 1st January 2022, a text was written by Emily Johnson.", "response": "{\"author\": \"Emily Johnson\", \"date\": \"2022\"}"}
-{"prompt": "Im Jahr 1843 ver\u00f6ffentlichte Charles Dickens sein ber\u00fchmtes Buch \"A Christmas Carol\".", "response": "{\"author\": \"Charles Dickens\", \"date\": \"1843\"}"}
-{"prompt": "Am 3. M\u00e4rz 2003 ver\u00f6ffentlichte Stephen King diesen Roman.", "response": "{\"author\": \"Stephen King\", \"date\": \"2003\"}"}
+{"prompt": "Im Jahr 1843 veroeffentlichte Charles Dickens sein beruehmtes Buch \"A Christmas Carol\".", "response": "{\"author\": \"Charles Dickens\", \"date\": \"1843\"}"}
+{"prompt": "Am 3. Maerz 2003 veroeffentlichte Stephen King diesen Roman.", "response": "{\"author\": \"Stephen King\", \"date\": \"2003\"}"}
 {"prompt": "In 1960, Harper Lee published her novel \"To Kill a Mockingbird\".", "response": "{\"author\": \"Harper Lee\", \"date\": \"1960\"}"}
 {"prompt": "Am 20. April 2001 schrieb Angela Merkel einen Brief.", "response": "{\"author\": \"Angela Merkel\", \"date\": \"2001\"}"}
 {"prompt": "The book \"The Great Gatsby\" was written by F. Scott Fitzgerald and published on April 10, 1925.", "response": "{\"author\": \"F. Scott Fitzgerald\", \"date\": \"1925\"}"}
-{"prompt": "Das Buch \"Faust\" wurde von Johann Wolfgang von Goethe geschrieben und 1808 ver\u00f6ffentlicht.", "response": "{\"author\": \"Johann Wolfgang von Goethe\", \"date\": \"1808\"}"}
+{"prompt": "Das Buch \"Faust\" wurde von Johann Wolfgang von Goethe geschrieben und 1808 veroeffentlicht.", "response": "{\"author\": \"Johann Wolfgang von Goethe\", \"date\": \"1808\"}"}
 {"prompt": "In 1922, T.S. Eliot published his famous poem \"The Waste Land\".", "response": "{\"author\": \"T.S. Eliot\", \"date\": \"1922\"}"}
 {"prompt": "This is a report by Albert Einstein on 14th March 1879.", "response": "{\"author\": \"Albert Einstein\", \"date\": \"1879\"}"}
-{"prompt": "Dieser Text wurde von Thomas M\u00fcller am 25. Dezember 2019 verfasst.", "response": "{\"author\": \"Thomas M\\u00fcller\", \"date\": \"2019\"}"}
-{"prompt": "Am 24. Februar 1920 wurde Adolf Hitlers Buch \"Mein Kampf\" ver\u00f6ffentlicht.", "response": "{\"author\": \"Adolf Hitler\", \"date\": \"1920\"}"}
-{"prompt": "\"Der Zauberberg\", ein Roman von Thomas Mann, wurde 1924 ver\u00f6ffentlicht.", "response": "{\"author\": \"Thomas Mann\", \"date\": \"1924\"}"}
+{"prompt": "Dieser Text wurde von Thomas Mueller am 25. Dezember 2019 verfasst.", "response": "{\"author\": \"Thomas Mueller\", \"date\": \"2019\"}"}
+{"prompt": "Am 24. Februar 1920 wurde Adolf Hitlers Buch \"Mein Kampf\" veroeffentlicht.", "response": "{\"author\": \"Adolf Hitler\", \"date\": \"1920\"}"}
+{"prompt": "\"Der Zauberberg\", ein Roman von Thomas Mann, wurde 1924 veroeffentlicht.", "response": "{\"author\": \"Thomas Mann\", \"date\": \"1924\"}"}
 {"prompt": "In 1949, George Orwell released his dystopian novel \"1984\".", "response": "{\"author\": \"George Orwell\", \"date\": \"1949\"}"}
 {"prompt": "\"1984\", a dystopian novel by George Orwell, was first published in 1949.", "response": "{\"author\": \"George Orwell\", \"date\": \"1949\"}"}
 {"prompt": "The book \"To Kill a Mockingbird\" was written by Harper Lee and published on July 11, 1960.", "response": "{\"author\": \"Harper Lee\", \"date\": \"1960\"}"}
 {"prompt": "The author of this text is Sarah Brown and it was written on 30th June 2021.", "response": "{\"author\": \"Sarah Brown\", \"date\": \"2021\"}"}
-{"prompt": "Am 15. Februar 1999 ver\u00f6ffentlichte Johann Wolfgang von Goethe dieses Gedicht.", "response": "{\"author\": \"Johann Wolfgang von Goethe\", \"date\": \"1999\"}"}
-{"prompt": "Am 28. September 1909 wurde Thomas Manns Roman \"Buddenbrooks\" ver\u00f6ffentlicht.", "response": "{\"author\": \"Thomas Mann\", \"date\": \"1909\"}"}
-{"prompt": "\"Faust\", ein Drama von Johann Wolfgang von Goethe, wurde 1808 ver\u00f6ffentlicht.", "response": "{\"author\": \"Johann Wolfgang von Goethe\", \"date\": \"1808\"}"}
+{"prompt": "Am 15. Februar 1999 veroeffentlichte Johann Wolfgang von Goethe dieses Gedicht.", "response": "{\"author\": \"Johann Wolfgang von Goethe\", \"date\": \"1999\"}"}
+{"prompt": "Am 28. September 1909 wurde Thomas Manns Roman \"Buddenbrooks\" veroeffentlicht.", "response": "{\"author\": \"Thomas Mann\", \"date\": \"1909\"}"}
+{"prompt": "\"Faust\", ein Drama von Johann Wolfgang von Goethe, wurde 1808 veroeffentlicht.", "response": "{\"author\": \"Johann Wolfgang von Goethe\", \"date\": \"1808\"}"}
 {"prompt": "On the 7th of July, 2007, a blog post was published by Mark Zuckerberg.", "response": "{\"author\": \"Mark Zuckerberg\", \"date\": \"2007\"}"}
 {"prompt": "Am 2. Februar 2019 hat David Becker diesen Text geschrieben.", "response": "{\"author\": \"David Becker\", \"date\": \"2019\"}"}
-{"prompt": "\"Die Verwandlung\" ist eine Novelle von Franz Kafka, die im Jahr 1915 ver\u00f6ffentlicht wurde.", "response": "{\"author\": \"Franz Kafka\", \"date\": \"1915\"}"}
+{"prompt": "\"Die Verwandlung\" ist eine Novelle von Franz Kafka, die im Jahr 1915 veroeffentlicht wurde.", "response": "{\"author\": \"Franz Kafka\", \"date\": \"1915\"}"}
 {"prompt": "In 1818, Mary Shelley published her famous novel \"Frankenstein\".", "response": "{\"author\": \"Mary Shelley\", \"date\": \"1818\"}"}
 {"prompt": "This text, written by Lisa Taylor, was published on 10th October 2021.", "response": "{\"author\": \"Lisa Taylor\", \"date\": \"2021\"}"}
-{"prompt": "Im Jahr 1774 ver\u00f6ffentlichte Johann Wolfgang von Goethe seinen Roman \"Die Leiden des jungen Werthers\".", "response": "{\"author\": \"Johann Wolfgang von Goethe\", \"date\": \"1774\"}"}
+{"prompt": "Im Jahr 1774 veroeffentlichte Johann Wolfgang von Goethe seinen Roman \"Die Leiden des jungen Werthers\".", "response": "{\"author\": \"Johann Wolfgang von Goethe\", \"date\": \"1774\"}"}
 {"prompt": "Dieser Artikel wurde von Johann Wolfgang von Goethe am 22. April 1782 verfasst.", "response": "{\"author\": \"Johann Wolfgang von Goethe\", \"date\": \"1782\"}"}
-{"prompt": "Am 1. Mai 1960 ver\u00f6ffentlichte Johann Wolfgang von Goethe ein Gedicht.", "response": "{\"author\": \"Johann Wolfgang von Goethe\", \"date\": \"1960\"}"}
-{"prompt": "Dieser Text wurde von Thomas M\u00fcller am 24. Dezember 2019 geschrieben.", "response": "{\"author\": \"Thomas M\\u00fcller\", \"date\": \"2019\"}"}
-{"prompt": "\"Faust\" ist ein Drama von Johann Wolfgang von Goethe, das im Jahr 1808 ver\u00f6ffentlicht wurde.", "response": "{\"author\": \"Johann Wolfgang von Goethe\", \"date\": \"1808\"}"}
+{"prompt": "Am 1. Mai 1960 veroeffentlichte Johann Wolfgang von Goethe ein Gedicht.", "response": "{\"author\": \"Johann Wolfgang von Goethe\", \"date\": \"1960\"}"}
+{"prompt": "Dieser Text wurde von Thomas Mueller am 24. Dezember 2019 geschrieben.", "response": "{\"author\": \"Thomas Mueller\", \"date\": \"2019\"}"}
+{"prompt": "\"Faust\" ist ein Drama von Johann Wolfgang von Goethe, das im Jahr 1808 veroeffentlicht wurde.", "response": "{\"author\": \"Johann Wolfgang von Goethe\", \"date\": \"1808\"}"}
 {"prompt": "\"Lord of the Flies\", a novel by William Golding, was first published in 1954.", "response": "{\"author\": \"William Golding\", \"date\": \"1954\"}"}
 {"prompt": "Am 15. April 2020 wurde dieser Text von Maria Schmidt verfasst.", "response": "{\"author\": \"Maria Schmidt\", \"date\": \"2020\"}"}
 {"prompt": "In 1984, George Orwell published his famous novel \"1984\".", "response": "{\"author\": \"George Orwell\", \"date\": \"1984\"}"}
 {"prompt": "Am 1. Januar 2001 schrieb Thomas Mann diesen Roman.", "response": "{\"author\": \"Thomas Mann\", \"date\": \"2001\"}"}
-{"prompt": "Am 10. Dezember 1865 wurde Lewis Carrolls \"Alice im Wunderland\" ver\u00f6ffentlicht.", "response": "{\"author\": \"Lewis Carroll\", \"date\": \"1865\"}"}
+{"prompt": "Am 10. Dezember 1865 wurde Lewis Carrolls \"Alice im Wunderland\" veroeffentlicht.", "response": "{\"author\": \"Lewis Carroll\", \"date\": \"1865\"}"}
 {"prompt": "This is a text written by John Doe on 12th March 2021.", "response": "{\"author\": \"John Doe\", \"date\": \"2021\"}"}
-{"prompt": "Im Jahr 1920 ver\u00f6ffentlichte Franz Kafka \"Das Schloss\", eines seiner bekanntesten Werke.", "response": "{\"author\": \"Franz Kafka\", \"date\": \"1920\"}"}
+{"prompt": "Im Jahr 1920 veroeffentlichte Franz Kafka \"Das Schloss\", eines seiner bekanntesten Werke.", "response": "{\"author\": \"Franz Kafka\", \"date\": \"1920\"}"}
 {"prompt": "\"Animal Farm\" is a novel by George Orwell, published in 1945.", "response": "{\"author\": \"George Orwell\", \"date\": \"1945\"}"}
 {"prompt": "Dieser Text wurde von Maria Schmidt am 15. August 2020 verfasst.", "response": "{\"author\": \"Maria Schmidt\", \"date\": \"2020\"}"}
 {"prompt": "The first edition of \"Pride and Prejudice\" by Jane Austen was published on January 28, 1813.", "response": "{\"author\": \"Jane Austen\", \"date\": \"1813\"}"}
-{"prompt": "Im Jahr 1925 wurde der Roman \"Der gro\u00dfe Gatsby\" von F. Scott Fitzgerald ver\u00f6ffentlicht.", "response": "{\"author\": \"F. Scott Fitzgerald\", \"date\": \"1925\"}"}
+{"prompt": "Im Jahr 1925 wurde der Roman \"Der grosse Gatsby\" von F. Scott Fitzgerald veroeffentlicht.", "response": "{\"author\": \"F. Scott Fitzgerald\", \"date\": \"1925\"}"}
 {"prompt": "On September 1, 1851, Herman Melville published his masterpiece, \"Moby-Dick\".", "response": "{\"author\": \"Herman Melville\", \"date\": \"1851\"}"}
 {"prompt": "On the 20th of May, 2020, a scientific paper was published by Stephen Hawking.", "response": "{\"author\": \"Stephen Hawking\", \"date\": \"2020\"}"}
 {"prompt": "Am 11. November 2018 wurde dieser Text von Anna Schneider verfasst.", "response": "{\"author\": \"Anna Schneider\", \"date\": \"2018\"}"}
-{"prompt": "Im Jahr 1871 ver\u00f6ffentlichte Lewis Carroll sein bekanntes Buch \"Alice im Wunderland\".", "response": "{\"author\": \"Lewis Carroll\", \"date\": \"1871\"}"}
+{"prompt": "Im Jahr 1871 veroeffentlichte Lewis Carroll sein bekanntes Buch \"Alice im Wunderland\".", "response": "{\"author\": \"Lewis Carroll\", \"date\": \"1871\"}"}
 {"prompt": "On the 15th of August, 1947, a declaration was made by Jawaharlal Nehru.", "response": "{\"author\": \"Jawaharlal Nehru\", \"date\": \"1947\"}"}
-{"prompt": "\"Die Blechtrommel\", ein Roman von G\u00fcnter Grass, wurde 1959 ver\u00f6ffentlicht.", "response": "{\"author\": \"G\\u00fcnter Grass\", \"date\": \"1959\"}"}
+{"prompt": "\"Die Blechtrommel\", ein Roman von Guenter Grass, wurde 1959 veroeffentlicht.", "response": "{\"author\": \"Guenter Grass\", \"date\": \"1959\"}"}
 {"prompt": "This article was written by Charles Dickens on the 30th of June, 1865.", "response": "{\"author\": \"Charles Dickens\", \"date\": \"1865\"}"}
 {"prompt": "The poem \"The Raven\" was written by Edgar Allan Poe and published on January 29, 1845.", "response": "{\"author\": \"Edgar Allan Poe\", \"date\": \"1845\"}"}
 {"prompt": "This is an article written by Charles Dickens on 7th February 1812.", "response": "{\"author\": \"Charles Dickens\", \"date\": \"1812\"}"}
 {"prompt": "The article titled \"The Theory of Relativity\" was written by Albert Einstein and published on November 25, 1915.", "response": "{\"author\": \"Albert Einstein\", \"date\": \"1915\"}"}
 {"prompt": "Am 9. November 1989 gab Helmut Kohl eine Rede.", "response": "{\"author\": \"Helmut Kohl\", \"date\": \"1989\"}"}
-{"prompt": "Am 25. Dezember 1995 ver\u00f6ffentlichte Stephen King dieses Buch.", "response": "{\"author\": \"Stephen King\", \"date\": \"1995\"}"}
-{"prompt": "\"1984\", ein dystopischer Roman von George Orwell, wurde 1949 ver\u00f6ffentlicht.", "response": "{\"author\": \"George Orwell\", \"date\": \"1949\"}"}
+{"prompt": "Am 25. Dezember 1995 veroeffentlichte Stephen King dieses Buch.", "response": "{\"author\": \"Stephen King\", \"date\": \"1995\"}"}
+{"prompt": "\"1984\", ein dystopischer Roman von George Orwell, wurde 1949 veroeffentlicht.", "response": "{\"author\": \"George Orwell\", \"date\": \"1949\"}"}
 {"prompt": "\"The Old Man and the Sea\", a novel by Ernest Hemingway, was published in 1952.", "response": "{\"author\": \"Ernest Hemingway\", \"date\": \"1952\"}"}
 {"prompt": "Am 25. Dezember 1999 schrieb Angela Merkel diesen Text.", "response": "{\"author\": \"Angela Merkel\", \"date\": \"1999\"}"}
 {"prompt": "The book \"1984\" was written by George Orwell and published on June 8, 1949.", "response": "{\"author\": \"George Orwell\", \"date\": \"1949\"}"}
 {"prompt": "On the 30th of September, 2010, a research paper was published by Stephen Hawking.", "response": "{\"author\": \"Stephen Hawking\", \"date\": \"2010\"}"}
 {"prompt": "The book \"1984\" was written by George Orwell and published in 1949.", "response": "{\"author\": \"George Orwell\", \"date\": \"1949\"}"}
-{"prompt": "Am 10. Oktober 2000 ver\u00f6ffentlichte J.K. Rowling diesen Roman.", "response": "{\"author\": \"J.K. Rowling\", \"date\": \"2000\"}"}
+{"prompt": "Am 10. Oktober 2000 veroeffentlichte J.K. Rowling diesen Roman.", "response": "{\"author\": \"J.K. Rowling\", \"date\": \"2000\"}"}
 {"prompt": "The text \"The Catcher in the Rye\" was written by J.D. Salinger in 1951.", "response": "{\"author\": \"J.D. Salinger\", \"date\": \"1951\"}"}
 {"prompt": "On 29th February 2020, this text was authored by Michael Davis.", "response": "{\"author\": \"Michael Davis\", \"date\": \"2020\"}"}
-{"prompt": "\"Der Prozess\", ein Roman von Franz Kafka, wurde 1925 posthum ver\u00f6ffentlicht.", "response": "{\"author\": \"Franz Kafka\", \"date\": \"1925\"}"}
+{"prompt": "\"Der Prozess\", ein Roman von Franz Kafka, wurde 1925 posthum veroeffentlicht.", "response": "{\"author\": \"Franz Kafka\", \"date\": \"1925\"}"}
 {"prompt": "On the 31st of October, 2000, a report was written by Tony Blair.", "response": "{\"author\": \"Tony Blair\", \"date\": \"2000\"}"}
 {"prompt": "Am 1. Januar 2000 schrieb Albert Einstein diesen Brief.", "response": "{\"author\": \"Albert Einstein\", \"date\": \"2000\"}"}
-{"prompt": "\"Die Verwandlung\", eine Novelle von Franz Kafka, wurde 1915 ver\u00f6ffentlicht.", "response": "{\"author\": \"Franz Kafka\", \"date\": \"1915\"}"}
+{"prompt": "\"Die Verwandlung\", eine Novelle von Franz Kafka, wurde 1915 veroeffentlicht.", "response": "{\"author\": \"Franz Kafka\", \"date\": \"1915\"}"}
 {"prompt": "On 1st January 2022, this text was authored by Richard Johnson.", "response": "{\"author\": \"Richard Johnson\", \"date\": \"2022\"}"}
 {"prompt": "Am 5. Mai 2018 hat Anna Schneider diesen Text verfasst.", "response": "{\"author\": \"Anna Schneider\", \"date\": \"2018\"}"}
-{"prompt": "Im Jahr 1818 ver\u00f6ffentlichte Mary Shelley ihren Roman \"Frankenstein\".", "response": "{\"author\": \"Mary Shelley\", \"date\": \"1818\"}"}
+{"prompt": "Im Jahr 1818 veroeffentlichte Mary Shelley ihren Roman \"Frankenstein\".", "response": "{\"author\": \"Mary Shelley\", \"date\": \"1818\"}"}
 {"prompt": "The scientific paper titled \"Quantum Mechanics\" was written by Max Planck and published on December 14, 1900.", "response": "{\"author\": \"Max Planck\", \"date\": \"1900\"}"}
-{"prompt": "\"Die Leiden des jungen Werthers\" ist ein Roman von Johann Wolfgang von Goethe, der im Jahr 1774 ver\u00f6ffentlicht wurde.", "response": "{\"author\": \"Johann Wolfgang von Goethe\", \"date\": \"1774\"}"}
+{"prompt": "\"Die Leiden des jungen Werthers\" ist ein Roman von Johann Wolfgang von Goethe, der im Jahr 1774 veroeffentlicht wurde.", "response": "{\"author\": \"Johann Wolfgang von Goethe\", \"date\": \"1774\"}"}
 {"prompt": "In a letter dated May 10, 1933, Albert Einstein wrote to his friend about his latest discoveries.", "response": "{\"author\": \"Albert Einstein\", \"date\": \"1933\"}"}
-{"prompt": "\"Der Prozess\" ist ein Roman von Franz Kafka, der posthum im Jahr 1925 ver\u00f6ffentlicht wurde.", "response": "{\"author\": \"Franz Kafka\", \"date\": \"1925\"}"}
+{"prompt": "\"Der Prozess\" ist ein Roman von Franz Kafka, der posthum im Jahr 1925 veroeffentlicht wurde.", "response": "{\"author\": \"Franz Kafka\", \"date\": \"1925\"}"}
 {"prompt": "The book \"To Kill a Mockingbird\" was written by Harper Lee and published in 1960.", "response": "{\"author\": \"Harper Lee\", \"date\": \"1960\"}"}
 {"prompt": "A diary entry by Nikola Tesla on 21st February 2006 explores his latest inventions.", "response": "{\"author\": \"Nikola Tesla\", \"date\": \"2006\"}"}
 {"prompt": "In diesem Artikel, verfasst von Clara Schumann am 11. Juni 2022, werden neue Musikrichtungen erörtert.", "response": "{\"author\": \"Clara Schumann\", \"date\": \"2022\"}"}
@@ -250,43 +250,43 @@
 {"prompt": "In diesem Essay von Max Frisch, datiert auf den 8. Mai 2021, werden Themen der Identität und Erinnerung behandelt.", "response": "{\"author\": \"Max Frisch\", \"date\": \"2021\"}"}
 {"prompt": "A manuscript on evolutionary biology by Charles Darwin, likely from mid-2019.", "response": "{\"author\": \"Charles Darwin\", \"date\": \"2019\"}"}
 {"prompt": "Dieser Kommentar von Heinrich Heine, geschrieben im Dezember 2014, behandelt poetische Ansichten.", "response": "{\"author\": \"Heinrich Heine\", \"date\": \"2014\"}"}
-{"prompt": "In his lecture on 23rd August 2018, the professor discussed the advancements in artificial intelligence.", "response": {"author": "N/A", "date": "2018"}}
-{"prompt": "William Shakespeare, in 'Hamlet', written on the 13th of March, portrays the complexity of the human psyche.", "response": {"author": "William Shakespeare", "date": "N/A"}}
-{"prompt": "The ground-breaking article by Jane Goodall, published in 1986, detailed her observations of chimpanzees in the wild.", "response": {"author": "Jane Goodall", "date": "1986"}}
-{"prompt": "In a report published on 10th October 2005, the economist discussed the implications of the housing market crash.", "response": {"author": "N/A", "date": "2005"}}
-{"prompt": "Ernest Hemingway, in his novel 'The Old Man and the Sea', tells a story of courage and personal triumph.", "response": {"author": "Ernest Hemingway", "date": "N/A"}}
-{"prompt": "The study, published in April 1990, explores the effects of deforestation on local climates.", "response": {"author": "N/A", "date": "1990"}}
-{"prompt": "Marie Curie, in her research conducted in 1903, made significant discoveries about radioactivity.", "response": {"author": "Marie Curie", "date": "1903"}}
-{"prompt": "On 5th June, George Orwell wrote about the socio-political conditions of his time.", "response": {"author": "George Orwell", "date": "N/A"}}
-{"prompt": "In a paper published on 22nd September 1988, the biologist detailed new findings in genetics.", "response": {"author": "N/A", "date": "1988"}}
-{"prompt": "Friedrich Nietzsche, in his book 'Beyond Good and Evil', written in March, delves into the depths of philosophy.", "response": {"author": "Friedrich Nietzsche", "date": "N/A"}}
-{"prompt": "In his article from December 2012, the journalist analyses the impact of global warming.", "response": {"author": "N/A", "date": "2012"}}
-{"prompt": "Sigmund Freud, in his groundbreaking work 'The Interpretation of Dreams' published in 1899, explored the meaning of dreams.", "response": {"author": "Sigmund Freud", "date": "1899"}}
-{"prompt": "The novelist, in her book released on 8th November 1974, portrayed the struggles of immigrant families.", "response": {"author": "N/A", "date": "1974"}}
-{"prompt": "Charles Darwin, in 'On the Origin of Species', written in July, revolutionized the way we understand natural selection.", "response": {"author": "Charles Darwin", "date": "N/A"}}
-{"prompt": "The report, released on 15th March 2001, detailed the advancements in renewable energy technologies.", "response": {"author": "N/A", "date": "2001"}}
-{"prompt": "Jane Austen, in her novel 'Pride and Prejudice', first published on Friday, explores themes of love and social standing.", "response": {"author": "Jane Austen", "date": "N/A"}}
-{"prompt": "The article, published on 21st July 1998, discusses the rising trends in digital technology.", "response": {"author": "N/A", "date": "1998"}}
-{"prompt": "Albert Einstein, in his paper, presented a new understanding of the concept of relativity.", "response": {"author": "Albert Einstein", "date": "N/A"}}
-{"prompt": "In her study published in 2002, the sociologist examines the effects of urbanization on communities.", "response": {"author": "N/A", "date": "2002"}}
-{"prompt": "Mark Twain, in his work 'Adventures of Huckleberry Finn', published in Dezember, depicted the adventures of a young boy.", "response": {"author": "Mark Twain", "date": "N/A"}}
-{"prompt": "In seiner Vorlesung diskutierte der Professor die Fortschritte in der k\u00fcnstlichen Intelligenz.", "response": {"author": "N/A", "date": "N/A"}}
-{"prompt": "William Shakespeare stellt in 'Hamlet' die Komplexit\u00e4t der menschlichen Psyche dar.", "response": {"author": "William Shakespeare", "date": "N/A"}}
-{"prompt": "Die bahnbrechende Artikel von Jane Goodall aus dem Jahr 1986 beschrieb ihre Beobachtungen von Schimpansen in der Wildnis.", "response": {"author": "Jane Goodall", "date": "1986"}}
-{"prompt": "In einem Bericht, welcher im 23. Juli erschienen ist, diskutierte der \u00d6konom die Auswirkungen des Zusammenbruchs des Immobilienmarktes.", "response": {"author": "N/A", "date": "N/A"}}
-{"prompt": "Ernest Hemingway erz\u00e4hlt in seinem Roman 'Der alte Mann und das Meer' eine Geschichte von Mut und pers\u00f6nlichem Triumph.", "response": {"author": "Ernest Hemingway", "date": "N/A"}}
-{"prompt": "Die Studie aus dem Jahr 1990 untersucht die Auswirkungen der Entwaldung auf lokale Klimata.", "response": {"author": "N/A", "date": "1990"}}
-{"prompt": "Marie Curie machte in ihrer Forschung aus dem Jahr 1903 bedeutende Entdeckungen \u00fcber Radioaktivit\u00e4t.", "response": {"author": "Marie Curie", "date": "1903"}}
-{"prompt": "George Orwell schrieb \u00fcber die sozio-politischen Bedingungen seiner Zeit.", "response": {"author": "George Orwell", "date": "N/A"}}
-{"prompt": "In einer Abhandlung aus dem Jahr 1988 beschrieb der Biologe neue Erkenntnisse in der Genetik.", "response": {"author": "N/A", "date": "1988"}}
-{"prompt": "Friedrich Nietzsche vertieft sich in seinem Buch 'Jenseits von Gut und B\u00f6se', welches am 28. Mai erschienen ist, in die Tiefen der Philosophie.", "response": {"author": "Friedrich Nietzsche", "date": "N/A"}}
-{"prompt": "In seinem Artikel beschrieb der Wissenschaftler die neuesten Entwicklungen in der Robotik.", "response": {"author": "N/A", "date": "N/A"}}
-{"prompt": "Johann Wolfgang von Goethe, in seinem Werk 'Faust', untersucht die Natur des Menschen.", "response": {"author": "Johann Wolfgang von Goethe", "date": "N/A"}}
-{"prompt": "Die Dissertation von Max Planck aus dem Jahr 1899 revolutionierte die Physik.", "response": {"author": "Max Planck", "date": "1899"}}
-{"prompt": "Die Journalistin berichtete \u00fcber die politischen Ver\u00e4nderungen in Deutschland.", "response": {"author": "N/A", "date": "N/A"}}
-{"prompt": "Thomas Mann, in seinem Roman 'Buddenbrooks', zeichnet ein Bild des Verfalls einer Kaufmannsfamilie.", "response": {"author": "Thomas Mann", "date": "N/A"}}
-{"prompt": "Der Bericht aus dem Jahr 2003 behandelt die Auswirkungen der Globalisierung auf lokale M\u00e4rkte.", "response": {"author": "N/A", "date": "2003"}}
-{"prompt": "Albert Einstein erl\u00e4uterte in seinem Papier von 1915 die allgemeine Relativit\u00e4tstheorie.", "response": {"author": "Albert Einstein", "date": "1915"}}
-{"prompt": "Hermann Hesse, in seinem Buch 'Steppenwolf' erschienen am 31. Januar, erforscht die menschliche Seele.", "response": {"author": "Hermann Hesse", "date": "N/A"}}
-{"prompt": "In einer Studie aus dem Jahr 1985 wurde die Wirkung von Umweltverschmutzung auf \u00d6kosysteme untersucht.", "response": {"author": "N/A", "date": "1985"}}
-{"prompt": "Heinrich Heine, in seinen Gedichten, dr\u00fcckt tiefe emotionale und soziale Kommentare aus.", "response": {"author": "Heinrich Heine", "date": "N/A"}}
+{"prompt": "In his lecture on 23rd August 2018, the professor discussed the advancements in artificial intelligence.", "response": "{\"author\": \"N/A\", \"date\": \"2018\"}"}
+{"prompt": "William Shakespeare, in 'Hamlet', written on the 13th of March, portrays the complexity of the human psyche.", "response": "{\"author\": \"William Shakespeare\", \"date\": \"N/A\"}"}
+{"prompt": "The ground-breaking article by Jane Goodall, published in 1986, detailed her observations of chimpanzees in the wild.", "response": "{\"author\": \"Jane Goodall\", \"date\": \"1986\"}"}
+{"prompt": "In a report published on 10th October 2005, the economist discussed the implications of the housing market crash.", "response": "{\"author\": \"N/A\", \"date\": \"2005\"}"}
+{"prompt": "Ernest Hemingway, in his novel 'The Old Man and the Sea', tells a story of courage and personal triumph.", "response": "{\"author\": \"Ernest Hemingway\", \"date\": \"N/A\"}"}
+{"prompt": "The study, published in April 1990, explores the effects of deforestation on local climates.", "response": "{\"author\": \"N/A\", \"date\": \"1990\"}"}
+{"prompt": "Marie Curie, in her research conducted in 1903, made significant discoveries about radioactivity.", "response": "{\"author\": \"Marie Curie\", \"date\": \"1903\"}"}
+{"prompt": "On 5th June, George Orwell wrote about the socio-political conditions of his time.", "response": "{\"author\": \"George Orwell\", \"date\": \"N/A\"}"}
+{"prompt": "In a paper published on 22nd September 1988, the biologist detailed new findings in genetics.", "response": "{\"author\": \"N/A\", \"date\": \"1988\"}"}
+{"prompt": "Friedrich Nietzsche, in his book 'Beyond Good and Evil', written in March, delves into the depths of philosophy.", "response": "{\"author\": \"Friedrich Nietzsche\", \"date\": \"N/A\"}"}
+{"prompt": "In his article from December 2012, the journalist analyses the impact of global warming.", "response": "{\"author\": \"N/A\", \"date\": \"2012\"}"}
+{"prompt": "Sigmund Freud, in his groundbreaking work 'The Interpretation of Dreams' published in 1899, explored the meaning of dreams.", "response": "{\"author\": \"Sigmund Freud\", \"date\": \"1899\"}"}
+{"prompt": "The novelist, in her book released on 8th November 1974, portrayed the struggles of immigrant families.", "response": "{\"author\": \"N/A\", \"date\": \"1974\"}"}
+{"prompt": "Charles Darwin, in 'On the Origin of Species', written in July, revolutionized the way we understand natural selection.", "response": "{\"author\": \"Charles Darwin\", \"date\": \"N/A\"}"}
+{"prompt": "The report, released on 15th March 2001, detailed the advancements in renewable energy technologies.", "response": "{\"author\": \"N/A\", \"date\": \"2001\"}"}
+{"prompt": "Jane Austen, in her novel 'Pride and Prejudice', first published on Friday, explores themes of love and social standing.", "response": "{\"author\": \"Jane Austen\", \"date\": \"N/A\"}"}
+{"prompt": "The article, published on 21st July 1998, discusses the rising trends in digital technology.", "response": "{\"author\": \"N/A\", \"date\": \"1998\"}"}
+{"prompt": "Albert Einstein, in his paper, presented a new understanding of the concept of relativity.", "response": "{\"author\": \"Albert Einstein\", \"date\": \"N/A\"}"}
+{"prompt": "In her study published in 2002, the sociologist examines the effects of urbanization on communities.", "response": "{\"author\": \"N/A\", \"date\": \"2002\"}"}
+{"prompt": "Mark Twain, in his work 'Adventures of Huckleberry Finn', published in Dezember, depicted the adventures of a young boy.", "response": "{\"author\": \"Mark Twain\", \"date\": \"N/A\"}"}
+{"prompt": "In seiner Vorlesung diskutierte der Professor die Fortschritte in der kuenstlichen Intelligenz.", "response": "{\"author\": \"N/A\", \"date\": \"N/A\"}"}
+{"prompt": "William Shakespeare stellt in 'Hamlet' die Komplexitaet der menschlichen Psyche dar.", "response": "{\"author\": \"William Shakespeare\", \"date\": \"N/A\"}"}
+{"prompt": "Die bahnbrechende Artikel von Jane Goodall aus dem Jahr 1986 beschrieb ihre Beobachtungen von Schimpansen in der Wildnis.", "response": "{\"author\": \"Jane Goodall\", \"date\": \"1986\"}"}
+{"prompt": "In einem Bericht, welcher im 23. Juli erschienen ist, diskutierte der Oekonom die Auswirkungen des Zusammenbruchs des Immobilienmarktes.", "response": "{\"author\": \"N/A\", \"date\": \"N/A\"}"}
+{"prompt": "Ernest Hemingway erzaehlt in seinem Roman 'Der alte Mann und das Meer' eine Geschichte von Mut und persoenlichem Triumph.", "response": "{\"author\": \"Ernest Hemingway\", \"date\": \"N/A\"}"}
+{"prompt": "Die Studie aus dem Jahr 1990 untersucht die Auswirkungen der Entwaldung auf lokale Klimata.", "response": "{\"author\": \"N/A\", \"date\": \"1990\"}"}
+{"prompt": "Marie Curie machte in ihrer Forschung aus dem Jahr 1903 bedeutende Entdeckungen ueber Radioaktivitaet.", "response": "{\"author\": \"Marie Curie\", \"date\": \"1903\"}"}
+{"prompt": "George Orwell schrieb ueber die sozio-politischen Bedingungen seiner Zeit.", "response": "{\"author\": \"George Orwell\", \"date\": \"N/A\"}"}
+{"prompt": "In einer Abhandlung aus dem Jahr 1988 beschrieb der Biologe neue Erkenntnisse in der Genetik.", "response": "{\"author\": \"N/A\", \"date\": \"1988\"}"}
+{"prompt": "Friedrich Nietzsche vertieft sich in seinem Buch 'Jenseits von Gut und Boese', welches am 28. Mai erschienen ist, in die Tiefen der Philosophie.", "response": "{\"author\": \"Friedrich Nietzsche\", \"date\": \"N/A\"}"}
+{"prompt": "In seinem Artikel beschrieb der Wissenschaftler die neuesten Entwicklungen in der Robotik.", "response": "{\"author\": \"N/A\", \"date\": \"N/A\"}"}
+{"prompt": "Johann Wolfgang von Goethe, in seinem Werk 'Faust', untersucht die Natur des Menschen.", "response": "{\"author\": \"Johann Wolfgang von Goethe\", \"date\": \"N/A\"}"}
+{"prompt": "Die Dissertation von Max Planck aus dem Jahr 1899 revolutionierte die Physik.", "response": "{\"author\": \"Max Planck\", \"date\": \"1899\"}"}
+{"prompt": "Die Journalistin berichtete ueber die politischen Veraenderungen in Deutschland.", "response": "{\"author\": \"N/A\", \"date\": \"N/A\"}"}
+{"prompt": "Thomas Mann, in seinem Roman 'Buddenbrooks', zeichnet ein Bild des Verfalls einer Kaufmannsfamilie.", "response": "{\"author\": \"Thomas Mann\", \"date\": \"N/A\"}"}
+{"prompt": "Der Bericht aus dem Jahr 2003 behandelt die Auswirkungen der Globalisierung auf lokale Maerkte.", "response": "{\"author\": \"N/A\", \"date\": \"2003\"}"}
+{"prompt": "Albert Einstein erlaeuterte in seinem Papier von 1915 die allgemeine Relativitaetstheorie.", "response": "{\"author\": \"Albert Einstein\", \"date\": \"1915\"}"}
+{"prompt": "Hermann Hesse, in seinem Buch 'Steppenwolf' erschienen am 31. Januar, erforscht die menschliche Seele.", "response": "{\"author\": \"Hermann Hesse\", \"date\": \"N/A\"}"}
+{"prompt": "In einer Studie aus dem Jahr 1985 wurde die Wirkung von Umweltverschmutzung auf Oekosysteme untersucht.", "response": "{\"author\": \"N/A\", \"date\": \"1985\"}"}
+{"prompt": "Heinrich Heine, in seinen Gedichten, drueckt tiefe emotionale und soziale Kommentare aus.", "response": "{\"author\": \"Heinrich Heine\", \"date\": \"N/A\"}"}
