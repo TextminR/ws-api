@@ -188,7 +188,7 @@
 {"prompt": "In diesem Artikel von Christa Wolf, veröffentlicht am 21. März 2018, werden literarische Strömungen analysiert.", "response": "{\"author\": \"Christa Wolf\", \"date\": \"2018\"}"}
 {"prompt": "An article about environmental conservation by David Attenborough, written in late 2019.", "response": "{\"author\": \"David Attenborough\", \"date\": \"2019\"}"}
 {"prompt": "Dieses Gedicht von Paul Celan drückt tiefe emotionale Themen aus.", "response": "{\"author\": \"Paul Celan\", \"date\": \"N/A\"}"}
-{"prompt": "A scientific paper on genetics by Rosalind Franklin, undated but likely from  2015.", "response": "{\"author\": \"Rosalind Franklin\", \"date\": \" 2015\"}"}
+{"prompt": "A scientific paper on genetics by Rosalind Franklin, likely from 2015.", "response": "{\"author\": \"Rosalind Franklin\", \"date\": \" 2015\"}"}
 {"prompt": "Ein Bericht über moderne Kunst von Gerhard Richter, geschrieben im Dezember 2012.", "response": "{\"author\": \"Gerhard Richter\", \"date\": \" 2012\"}"}
 {"prompt": "A philosophical discourse by Simone de Beauvoir, penned in the autumn of 2014.", "response": "{\"author\": \"Simone de Beauvoir\", \"date\": \"2014\"}"}
 {"prompt": "In diesem Reisebericht von Alexander von Humboldt, geschrieben im Frühling 2007, werden unbekannte Regionen erforscht.", "response": "{\"author\": \"Alexander von Humboldt\", \"date\": \"2007\"}"}
@@ -208,27 +208,27 @@
 {"prompt": "Dieses Buch von Hermann Hesse, veröffentlicht im Herbst 2004, erkundet spirituelle Themen.", "response": "{\"author\": \"Hermann Hesse\", \"date\": \"2004\"}"}
 {"prompt": "A discussion on modern architecture by Frank Lloyd Wright, written in the spring of 2020.", "response": "{\"author\": \"Frank Lloyd Wright\", \"date\": \"2020\"}"}
 {"prompt": "In dieser Studie von Carl Friedrich Gauss, datiert auf den 7. Juli 2012, werden mathematische Konzepte analysiert.", "response": "{\"author\": \"Carl Friedrich Gauss\", \"date\": \"2012\"}"}
-{"prompt": "A paper on the psychology of creativity by Carl Jung, undated, likely from late 2013.", "response": "{\"author\": \"Carl Jung\", \"date\": \"late 2013\"}"}
+{"prompt": "A paper on the psychology of creativity by Carl Jung, likely from late 2013.", "response": "{\"author\": \"Carl Jung\", \"date\": \"2013\"}"}
 {"prompt": "Dieser Essay von Friedrich Nietzsche, geschrieben im Winter 2010, beschäftigt sich mit der Philosophie der Existenz.", "response": "{\"author\": \"Friedrich Nietzsche\", \"date\": \"2010\"}"}
 {"prompt": "An analysis of medieval literature by Umberto Eco, written in  autumn 2013.", "response": "{\"author\": \"Umberto Eco\", \"date\": \"2013\"}"}
 {"prompt": "In diesem Bericht von Konrad Adenauer, veröffentlicht am 15. Juni 2011, werden politische Strategien diskutiert.", "response": "{\"author\": \"Konrad Adenauer\", \"date\": \"2011\"}"}
-{"prompt": "A lecture on astrophysics by Carl Sagan, undated, likely delivered in late 2012.", "response": "{\"author\": \"Carl Sagan\", \"date\": \"late 2012\"}"}
+{"prompt": "A lecture on astrophysics by Carl Sagan, likely delivered in late 2012.", "response": "{\"author\": \"Carl Sagan\", \"date\": \"2012\"}"}
 {"prompt": "Dieser Artikel von Günther Grass, geschrieben im Frühjahr 2007, betrachtet die deutsche Nachkriegsliteratur.", "response": "{\"author\": \"Günther Grass\", \"date\": \"2007\"}"}
 {"prompt": "An editorial on environmental policies by Jane Goodall, dated 8th March 2018.", "response": "{\"author\": \"Jane Goodall\", \"date\": \"2018\"}"}
 {"prompt": "In dieser Studie von Albert Einstein, veröffentlicht im Sommer 2009, werden Relativitätstheorien erläutert.", "response": "{\"author\": \"Albert Einstein\", \"date\": \"2009\"}"}
 {"prompt": "A review of modern art trends by Georgia O'Keeffe, written in winter 2014.", "response": "{\"author\": \"Georgia O'Keeffe\", \"date\": \"2014\"}"}
 {"prompt": "Dieser Essay von Theodor Adorno, datiert auf den 10. April 2016, untersucht musikalische Innovationen.", "response": "{\"author\": \"Theodor Adorno\", \"date\": \"2016\"}"}
-{"prompt": "An investigative report on urban development by Jane Jacobs, undated, but likely from  2021.", "response": "{\"author\": \"Jane Jacobs\", \"date\": \"2021\"}"}
+{"prompt": "An investigative report on urban development by Jane Jacobs, likely from 2021.", "response": "{\"author\": \"Jane Jacobs\", \"date\": \"2021\"}"}
 {"prompt": "In diesem Gedicht von Paul Celan wird die Einsamkeit thematisiert.", "response": "{\"author\": \"Paul Celan\", \"date\": \"N/A\"}"}
 {"prompt": "A reflection on the evolution of language by Noam Chomsky, written in the spring of 2015.", "response": "{\"author\": \"Noam Chomsky\", \"date\": \"2015\"}"}
 {"prompt": "Dieser Kommentar von Hannah Arendt, geschrieben am 23. September 2008, behandelt politische Philosophie.", "response": "{\"author\": \"Hannah Arendt\", \"date\": \"2008\"}"}
 {"prompt": "An essay on quantum mechanics by Niels Bohr, dated 5th May 2017.", "response": "{\"author\": \"Niels Bohr\", \"date\": \"2017\"}"}
 {"prompt": "In diesem Artikel von Max Planck, veröffentlicht im Winter 2006, werden Quantenphänomene diskutiert.", "response": "{\"author\": \"Max Planck\", \"date\": \"2006\"}"}
-{"prompt": "A study on behavioral economics by Richard Thaler, undated, possibly from late 2018.", "response": "{\"author\": \"Richard Thaler\", \"date\": \"late 2018\"}"}
+{"prompt": "A study on behavioral economics by Richard Thaler, possibly from late 2018.", "response": "{\"author\": \"Richard Thaler\", \"date\": \"2018\"}"}
 {"prompt": "Dieser Bericht von Werner Heisenberg, geschrieben im Herbst 2013, erforscht subatomare Teilchen.", "response": "{\"author\": \"Werner Heisenberg\", \"date\": \"2013\"}"}
 {"prompt": "A critique of the modern education system by John Dewey, written in  autumn 2020.", "response": "{\"author\": \"John Dewey\", \"date\": \"2020\"}"}
 {"prompt": "In diesem Essay von Friedrich Schiller, datiert auf den 12. Februar 2014, wird die Bedeutung der Kunst analysiert.", "response": "{\"author\": \"Friedrich Schiller\", \"date\": \"2014\"}"}
-{"prompt": "A report on climate change by David Attenborough, undated, likely from the summer of 2021.", "response": "{\"author\": \"David Attenborough\", \"date\": \"2021\"}"}
+{"prompt": "A report on climate change by David Attenborough, likely from the summer of 2021.", "response": "{\"author\": \"David Attenborough\", \"date\": \"2021\"}"}
 {"prompt": "Dieses Gedicht von Ingeborg Bachmann, geschrieben irgendwann im Jahr 2019, reflektiert persönliche Erfahrungen.", "response": "{\"author\": \"Ingeborg Bachmann\", \"date\": \"2019\"}"}
 {"prompt": "A discourse on modern philosophy by Michel Foucault, written in late 2021.", "response": "{\"author\": \"Michel Foucault\", \"date\": \"2021\"}"}
 {"prompt": "In diesem Bericht von Gerhard Schröder, veröffentlicht am 14. März 2012, werden aktuelle politische Themen erörtert.", "response": "{\"author\": \"Gerhard Schröder\", \"date\": \"2012\"}"}
@@ -238,7 +238,7 @@
 {"prompt": "In dieser Studie von Ludwig Boltzmann, veröffentlicht im Sommer 2007, werden thermodynamische Prozesse analysiert.", "response": "{\"author\": \"Ludwig Boltzmann\", \"date\": \"2007\"}"}
 {"prompt": "An essay on surrealism in art by Salvador Dalí, written in the autumn of 2013.", "response": "{\"author\": \"Salvador Dalí\", \"date\": \"2013\"}"}
 {"prompt": "Dieser Kommentar von Franz Kafka, datiert auf den 6. Januar 2016, untersucht die Absurdität des Lebens.", "response": "{\"author\": \"Franz Kafka\", \"date\": \"2016\"}"}
-{"prompt": "A report on advancements in AI by Alan Turing, undated but likely from  2022.", "response": "{\"author\": \"Alan Turing\", \"date\": \" 2022\"}"}
+{"prompt": "A report on advancements in AI by Alan Turing, likely from 2022.", "response": "{\"author\": \"Alan Turing\", \"date\": \" 2022\"}"}
 {"prompt": "In diesem Gedicht von Friedrich Hölderlin wird die Schönheit der Natur gefeiert.", "response": "{\"author\": \"Friedrich Hölderlin\", \"date\": \"N/A\"}"}
 {"prompt": "An article on the impact of globalization by Thomas Piketty, written in May 2020.", "response": "{\"author\": \"Thomas Piketty\", \"date\": \"2020\"}"}
 {"prompt": "Dieser Bericht von Otto Hahn, veröffentlicht am 19. September 2014, befasst sich mit Kernspaltung.", "response": "{\"author\": \"Otto Hahn\", \"date\": \"2014\"}"}
@@ -248,7 +248,7 @@
 {"prompt": "Dieses Gedicht von Hermann Hesse, geschrieben an einem Frühlingstag 2013, reflektiert über menschliche Erfahrungen.", "response": "{\"author\": \"Hermann Hesse\", \"date\": \"2013\"}"}
 {"prompt": "A critique of economic policies by Milton Friedman, written in the winter of 2016.", "response": "{\"author\": \"Milton Friedman\", \"date\": \"2016\"}"}
 {"prompt": "In diesem Essay von Max Frisch, datiert auf den 8. Mai 2021, werden Themen der Identität und Erinnerung behandelt.", "response": "{\"author\": \"Max Frisch\", \"date\": \"2021\"}"}
-{"prompt": "A manuscript on evolutionary biology by Charles Darwin, undated, likely from mid-2019.", "response": "{\"author\": \"Charles Darwin\", \"date\": \"2019\"}"}
+{"prompt": "A manuscript on evolutionary biology by Charles Darwin, likely from mid-2019.", "response": "{\"author\": \"Charles Darwin\", \"date\": \"2019\"}"}
 {"prompt": "Dieser Kommentar von Heinrich Heine, geschrieben im Dezember 2014, behandelt poetische Ansichten.", "response": "{\"author\": \"Heinrich Heine\", \"date\": \"2014\"}"}
 {"prompt": "In his lecture on 23rd August 2018, the professor discussed the advancements in artificial intelligence.", "response": {"author": "N/A", "date": "2018"}}
 {"prompt": "William Shakespeare, in 'Hamlet', written on the 13th of March, portrays the complexity of the human psyche.", "response": {"author": "William Shakespeare", "date": "N/A"}}
