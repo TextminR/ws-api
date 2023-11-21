@@ -11,7 +11,8 @@ def get_text(db: Session, text_id: int):
 
 
 def get_texts(db: Session, skip, limit):
-    return db.query(models.Text.id, models.Text.autor, models.Text.titel, models.Text.year).offset(skip).limit(
+    return db.query(models.Text.id, models.Text.author, models.Text.title, models.Text.year,
+                    models.Text.language).offset(skip).limit(
         limit).all()
 
 
@@ -24,27 +25,32 @@ def get_texts_by_years_between(db: Session, minYear: int, maxYear: int):
 
 
 def get_texts_by_author(db: Session, author: str):
-    return db.query(models.Text).filter(models.Text.autor == author).all()
+    return db.query(models.Text).filter(models.Text.author == author).all()
 
 
 def get_text_by_title(db: Session, title: str):
-    return db.query(models.Text).filter(models.Text.titel == title).all()
+    return db.query(models.Text).filter(models.Text.title == title).all()
 
 
 def get_title_by_id(db: Session, text_id: int):
-    return db.query(models.Text.titel).filter(models.Text.id == text_id).first()
+    return db.query(models.Text.title).filter(models.Text.id == text_id).first()
 
 
 def get_title_by_year(db: Session, year: int):
-    return db.query(models.Text.titel).filter(models.Text.year == year).all()
+    return db.query(models.Text.title).filter(models.Text.year == year).all()
 
 
 def get_titles_between_years(db: Session, minYear: int, maxYear: int):
-    return db.query(models.Text.titel).filter(models.Text.year >= minYear).filter(models.Text.year <= maxYear).all()
+    return db.query(models.Text.title).filter(models.Text.year >= minYear).filter(models.Text.year <= maxYear).all()
 
 
 def get_title_by_author(db: Session, author: str):
-    return db.query(models.Text.titel).filter(models.Text.autor == author).all()
+    return db.query(models.Text.title).filter(models.Text.author == author).all()
+
+
+def get_texts_by_language_and_years(db: Session, minYear: int, maxYear: int, language: str):
+    return db.query(models.Text).filter(models.Text.language == language).filter(models.Text.year >= minYear).filter(
+        models.Text.year <= maxYear).all()
 
 
 def get_birthplace_by_author(db: Session, authorname: str):
@@ -52,7 +58,7 @@ def get_birthplace_by_author(db: Session, authorname: str):
 
 
 def create_text(db: Session, text: schemas.TextCreate):
-    db_text = models.Text(autor=text.autor, titel=text.titel, text=text.text, year=text.year)
+    db_text = models.Text(author=text.author, title=text.title, text=text.text, year=text.year, language=text.language)
     db.add(db_text)
     db.commit()
     db.refresh(db_text)
@@ -90,9 +96,15 @@ def get_newsarticle_by_date_between(db: Session, minDate: date, maxDate: date):
         models.Newsarticle.date <= maxDate).all()
 
 
+def get_newsarticle_by_language_and_date(db: Session, minDate: date, maxDate: date, language: str):
+    return db.query(models.Newsarticle).filter(models.Newsarticle.language == language).filter(
+        models.Newsarticle.date >= minDate).filter(
+        models.Newsarticle.date <= maxDate).all()
+
+
 def create_newsarticle(db: Session, data: schemas.NewsarticleCreate):
-    db_data = models.Newsarticle(titel=data.titel, datum=data.datum, newspapername=data.newspapername, autor=data.autor,
-                                 text=data.text)
+    db_data = models.Newsarticle(title=data.title, datum=data.datum, newspapername=data.newspapername, author=data.author,
+                                 text=data.text, language=data.language)
     db.add(db_data)
     db.commit()
     db.refresh(db_data)

@@ -5,32 +5,35 @@ from pydantic import BaseModel
 
 class TextMetadata(BaseModel):
     id: int
-    autor: str
-    titel: str
+    author: str
+    title: str
     year: int
+    language: str
 
 
 class Text(BaseModel):
     id: int
-    autor: str
-    titel: str
+    author: str
+    title: str
     text: str
     year: int
+    language: str
 
     class Config:
         from_attributes = True
 
 
 class TextBase(BaseModel):
-    autor: str
-    titel: str
+    author: str
+    title: str
 
 
 class TextCreate(TextBase):
-    autor: str
-    titel: str
+    author: str
+    title: str
     text: str
     year: int
+    language: str
 
 
 class Author(BaseModel):
@@ -77,23 +80,26 @@ class NER_DataCreate(NER_DataBase):
 
 class Newsarticle(BaseModel):
     id: int
-    titel: str
+    title: str
     datum: date
     newspapername: str
-    autor: str
+    author: str
     text: str
+    language: str
 
 
 class NewsarticleBase(BaseModel):
-    titel: str
+    title: str
     datum: date
     newspapername: str
     text: str
+    language: str
 
 
 class NewsarticleCreate(NewsarticleBase):
-    titel: str
+    title: str
     datum: date
     newspapername: str
-    autor: str
+    author: str
     text: str
+    language: str

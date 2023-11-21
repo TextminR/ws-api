@@ -6,25 +6,29 @@ class Text(Base):
     __tablename__ = "textdata"
 
     id = Column(Integer, primary_key=True)
-    autor = Column(String)
-    titel = Column(String)
+    author = Column(String)
+    title = Column(String)
     text = Column(String)
+    language = Column(String)
     year = Column(Integer)
 
     def __str__(self):
-        return f"{self.id}: {self.autor} {self.titel} {self.year}, {self.text}"
+        return f"{self.id}: {self.author} {self.title} {self.year} {self.language}, {self.text}"
 
     def getText(self):
         return self.text
 
-    def getAutor(self):
-        return self.autor
+    def getAuthor(self):
+        return self.author
 
-    def getTitel(self):
-        return self.titel
+    def getTitle(self):
+        return self.title
 
     def getYear(self):
         return self.year
+
+    def getLanguage(self):
+        return self.language
 
 
 class Author(Base):
@@ -58,8 +62,9 @@ class NER_Data(Base):
 class Newsarticle(Base):
     __tablename__ = "newsarticle"
     id = Column(Integer, primary_key=True)
-    titel = Column(String)
+    title = Column(String)
     datum = Column(DateTime)
     newspapername = Column(String)
-    autor = Column(String)
+    author = Column(String)
     text = Column(String)
+    language = Column(String)

@@ -21,13 +21,16 @@ def get_db():
         db.close()
 
 
-@app.get("/findAllTexts", response_model=List[schemas.TextMetadata])
-def findAllTexts(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
-    texts = crud.get_texts(db, skip=skip, limit=limit)
+def to_text_list(texts):
     text_list = []
     for text in texts:
         text_list.append(text)
     return text_list
+
+
+@app.get("/findAllTexts", response_model=List[schemas.TextMetadata])
+def findAllTexts(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+    return to_text_list(crud.get_texts(db, skip=skip, limit=limit))
 
 
 @app.get("/texts/{textid}", response_model=schemas.Text)
@@ -40,24 +43,14 @@ def findTextById(textid, db: Session = Depends(get_db)):
 #     res = extractFromPDF(file)
 #     return res
 
-@app.post("/getTitelBetweenYears/", response_model=List[str])
-def getTitelBetweenYears(minYear: int, maxYear: int, db: Session = Depends(get_db)):
-    titels = crud.get_titles_between_years(db, minYear, maxYear)
-    titel_list = []
-    for titel in titels:
-        titel_list.append(titel[0])
-
-    return titel_list
+@app.post("/getTitleBetweenYears/", response_model=List[str])
+def getTitleBetweenYears(minYear: int, maxYear: int, db: Session = Depends(get_db)):
+    return to_text_list(crud.get_titles_between_years(db, minYear, maxYear))
 
 
-@app.post("/getTitelByYear/", response_model=List[str])
-def getTitelByYear(year: int, db: Session = Depends(get_db)):
-    titels = crud.get_title_by_year(db, year)
-    titel_list = []
-    for titel in titels:
-        titel_list.append(titel[0])
-
-    return titel_list
+@app.post("/getTitleByYear/", response_model=List[str])
+def getTitleByYear(year: int, db: Session = Depends(get_db)):
+    return to_text_list(crud.get_title_by_year(db, year))
 
 
 @app.post("/createText/", response_model=schemas.Text)
@@ -67,42 +60,22 @@ def create_text(text: schemas.TextCreate, db: Session = Depends(get_db)):
 
 @app.post("/getTitleByAuthor/", response_model=List[str])
 def getTitleByAuthor(author: str, db: Session = Depends(get_db)):
-    titels = crud.get_title_by_author(db, author)
-    titel_list = []
-    for titel in titels:
-        titel_list.append(titel[0])
-
-    return titel_list
+    return to_text_list(crud.get_title_by_author(db, author))
 
 
 @app.post("/getTextByTitle/", response_model=List[schemas.Text])
 def getTextByTitle(title: str, db: Session = Depends(get_db)):
-    texts = crud.get_text_by_title(db, title)
-    text_list = []
-    for text in texts:
-        text_list.append(text)
-
-    return text_list
+    return to_text_list(crud.get_text_by_title(db, title))
 
 
 @app.post("/getTextByAuthor/", response_model=List[schemas.Text])
 def getTextByAuthor(author: str, db: Session = Depends(get_db)):
-    texts = crud.get_texts_by_author(db, author)
-    text_list = []
-    for text in texts:
-        text_list.append(text)
-
-    return text_list
+    return to_text_list(crud.get_texts_by_author(db, author))
 
 
 @app.post("/getTextByYear/", response_model=List[schemas.Text])
 def getTextByYear(year: int, db: Session = Depends(get_db)):
-    texts = crud.get_texts_by_year(db, year)
-    text_list = []
-    for text in texts:
-        text_list.append(text)
-
-    return text_list
+    return to_text_list(crud.get_texts_by_year(db, year))
 
 
 @app.post("/getBirthplaceOfAuthor/", response_model=str)
@@ -114,12 +87,12 @@ def getBirthplaceOfAuthor(authorname: str, db: Session = Depends(get_db)):
 
 @app.post("/getTextByYearBetween/", response_model=List[schemas.Text])
 def getTextByYearBetween(minYear: int, maxYear: int, db: Session = Depends(get_db)):
-    texts = crud.get_texts_by_years_between(db, minYear, maxYear)
-    text_list = []
-    for text in texts:
-        text_list.append(text)
+    return to_text_list(crud.get_texts_by_years_between(db, minYear, maxYear))
 
-    return text_list
+
+@app.post("/getTextByLanguageAndYears/", response_model=List[schemas.Text])
+def getTextByLanguageAndYears(minYear: int, maxYear: int, language: str, db: Session = Depends(get_db)):
+    return to_text_list(crud.get_texts_by_language_and_years(db, minYear, maxYear, language))
 
 
 @app.delete("/deleteText/{textid}")
