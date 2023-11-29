@@ -78,11 +78,14 @@ def getTextByYear(year: int, db: Session = Depends(get_db)):
     return to_text_list(crud.get_texts_by_year(db, year))
 
 
-@app.post("/getBirthplaceOfAuthor/", response_model=str)
+@app.get("/getAuthors/", response_model=List[schemas.Author])
+def getAuthors(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+    return to_text_list(crud.get_authors(db, skip, limit))
+
+
+@app.post("/getBirthplaceOfAuthor/", response_model=List[schemas.AuthorMetadata])
 def getBirthplaceOfAuthor(authorname: str, db: Session = Depends(get_db)):
-    birthplace = crud.get_birthplace_by_author(db, authorname=authorname)[0]
-    birthplace = birthplace[0]
-    return birthplace
+    return crud.get_birthplace_by_author(db, authorname)
 
 
 @app.post("/getTextByYearBetween/", response_model=List[schemas.Text])

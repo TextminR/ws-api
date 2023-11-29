@@ -36,9 +36,17 @@ class TextCreate(TextBase):
     language: str
 
 
+class AuthorMetadata(BaseModel):
+    birth_place: str
+    coordinatex: str
+    coordinatey: str
+
+
 class Author(BaseModel):
     name: str
     birth_place: str
+    coordinatex: str
+    coordinatey: str
 
     class Config:
         from_attributes = True
@@ -47,6 +55,8 @@ class Author(BaseModel):
 class AuthorBase(BaseModel):
     name: str
     birth_place: str
+    coordinatex: str
+    coordinatey: str
 
 
 class AuthorCreate(AuthorBase):

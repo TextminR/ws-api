@@ -54,7 +54,12 @@ def get_texts_by_language_and_years(db: Session, minYear: int, maxYear: int, lan
 
 
 def get_birthplace_by_author(db: Session, authorname: str):
-    return db.query(models.Author.birth_place).filter(models.Author.name == authorname).all()
+    return db.query(models.Author.birth_place, models.Author.coordinatex, models.Author.coordinatey).filter(
+        models.Author.name == authorname).all()
+
+
+def get_authors(db: Session, skip, limit):
+    return db.query(models.Author).offset(skip).limit(limit).all()
 
 
 def create_text(db: Session, text: schemas.TextCreate):
@@ -103,7 +108,8 @@ def get_newsarticle_by_language_and_date(db: Session, minDate: date, maxDate: da
 
 
 def create_newsarticle(db: Session, data: schemas.NewsarticleCreate):
-    db_data = models.Newsarticle(title=data.title, datum=data.datum, newspapername=data.newspapername, author=data.author,
+    db_data = models.Newsarticle(title=data.title, datum=data.datum, newspapername=data.newspapername,
+                                 author=data.author,
                                  text=data.text, language=data.language)
     db.add(db_data)
     db.commit()
