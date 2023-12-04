@@ -38,15 +38,15 @@ class TextCreate(TextBase):
 
 class AuthorMetadata(BaseModel):
     birth_place: str
-    coordinatex: str
-    coordinatey: str
+    lat: str
+    long: str
 
 
 class Author(BaseModel):
     name: str
     birth_place: str
-    coordinatex: str
-    coordinatey: str
+    lat: str
+    long: str
 
     class Config:
         from_attributes = True
@@ -55,15 +55,15 @@ class Author(BaseModel):
 class AuthorBase(BaseModel):
     name: str
     birth_place: str
-    coordinatex: str
-    coordinatey: str
+    lat: str
+    long: str
 
 
 class AuthorCreate(AuthorBase):
     name: str
     birth_place: str
-    coordinatex: str
-    coordinatey: str
+    lat: str
+    long: str
 
 
 class Extraction(BaseModel):

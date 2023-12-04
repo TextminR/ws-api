@@ -54,7 +54,7 @@ def get_texts_by_language_and_years(db: Session, minYear: int, maxYear: int, lan
 
 
 def get_birthplace_by_author(db: Session, authorname: str):
-    return db.query(models.Author.birth_place, models.Author.coordinatex, models.Author.coordinatey).filter(
+    return db.query(models.Author.birth_place, models.Author.lat, models.Author.long).filter(
         models.Author.name == authorname).all()
 
 
@@ -63,8 +63,8 @@ def get_authors(db: Session, skip, limit):
 
 
 def create_author(data: schemas.AuthorCreate, db: Session):
-    author = models.Author(name=data.name, birth_place=data.birth_place, coordinatex=data.coordinatex,
-                           coordinatey=data.coordinatey)
+    author = models.Author(name=data.name, birth_place=data.birth_place, lat=data.lat,
+                           long=data.long)
     db.add(author)
     db.commit()
     db.refresh(author)

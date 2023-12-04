@@ -36,8 +36,8 @@ class Author(Base):
 
     name = Column(String, primary_key=True)
     birth_place = Column(String)
-    coordinatex = Column(String)
-    coordinatey = Column(String)
+    lat = Column(String)
+    long = Column(String)
 
     def __str__(self):
         return f"{self.name}: {self.birthplace}"
