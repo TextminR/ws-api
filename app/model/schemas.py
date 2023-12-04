@@ -62,6 +62,8 @@ class AuthorBase(BaseModel):
 class AuthorCreate(AuthorBase):
     name: str
     birth_place: str
+    coordinatex: str
+    coordinatey: str
 
 
 class Extraction(BaseModel):

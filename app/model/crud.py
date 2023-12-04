@@ -62,6 +62,15 @@ def get_authors(db: Session, skip, limit):
     return db.query(models.Author).offset(skip).limit(limit).all()
 
 
+def create_author(data: schemas.AuthorCreate, db: Session):
+    author = models.Author(name=data.name, birth_place=data.birth_place, coordinatex=data.coordinatex,
+                           coordinatey=data.coordinatey)
+    db.add(author)
+    db.commit()
+    db.refresh(author)
+    return author
+
+
 def create_text(db: Session, text: schemas.TextCreate):
     db_text = models.Text(author=text.author, title=text.title, text=text.text, year=text.year, language=text.language)
     db.add(db_text)

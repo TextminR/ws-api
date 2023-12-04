@@ -87,6 +87,10 @@ def getAuthors(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
 def getBirthplaceOfAuthor(authorname: str, db: Session = Depends(get_db)):
     return crud.get_birthplace_by_author(db, authorname)
 
+@app.post("/createAuthor", response_model=schemas.Author)
+def createAuthor(data: schemas.AuthorCreate, db: Session=Depends(get_db)):
+    return crud.create_author(data, db)
+
 
 @app.post("/getTextByYearBetween/", response_model=List[schemas.Text])
 def getTextByYearBetween(minYear: int, maxYear: int, db: Session = Depends(get_db)):
