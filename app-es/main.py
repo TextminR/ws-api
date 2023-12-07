@@ -15,8 +15,8 @@ def to_text_list(texts):
 
 
 @app.post("/text_metadata", response_model=msg.Response)
-async def metadata_filter(minYear: int = None, maxYear: int = None, author: str = None, language: str = None):
-    data = crud.get_metadata_filter(client=ES, minYear=minYear, maxYear=maxYear, author=author, language=language)
+async def metadata(id: str = None, minYear: int = None, maxYear: int = None, author: str = None, language: str = None):
+    data = crud.get_metadata(client=ES, id=id, minYear=minYear, maxYear=maxYear, author=author, language=language)
     return msg.Response(status="200", message="OK", data=data)
 
 

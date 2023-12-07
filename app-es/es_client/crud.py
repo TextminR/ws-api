@@ -1,8 +1,11 @@
 from elasticsearch import Elasticsearch
 
 
-def build_query(author, minYear, maxYear, language):
+def build_query(id, author, minYear, maxYear, language):
     query_parts = []
+
+    if id:
+        query_parts.append({"match": {"_id": id}})
 
     if author:
         query_parts.append({"match": {"author": author}})
@@ -30,13 +33,14 @@ def metadata_to_list(response):
             "author": doc['_source']['author'],
             "title": doc['_source']['title'],
             "year": doc['_source']['year'],
-            "language": doc['_source']['language']
+            "language": doc['_source']['language'],
+            "embedding": doc['_source']['embedding']
         }
         result.append(document)
     return result
 
 
-def get_metadata_filter(client: Elasticsearch, minYear: int, maxYear: int, author: str, language: str):
-    query = build_query(author, minYear, maxYear, language)
+def get_metadata(client: Elasticsearch, id: str, minYear: int, maxYear: int, author: str, language: str):
+    query = build_query(id, author, minYear, maxYear, language)
     response = client.search(index="text_index", body={"query": query})
     return metadata_to_list(response=response)
