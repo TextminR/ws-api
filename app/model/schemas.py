@@ -40,6 +40,7 @@ class AuthorMetadata(BaseModel):
     birth_place: str
     lat: str
     long: str
+    country: str
 
 
 class Author(BaseModel):
@@ -47,6 +48,7 @@ class Author(BaseModel):
     birth_place: str
     lat: str
     long: str
+    country: str
 
     class Config:
         from_attributes = True
@@ -57,6 +59,7 @@ class AuthorBase(BaseModel):
     birth_place: str
     lat: str
     long: str
+    country: str
 
 
 class AuthorCreate(AuthorBase):
@@ -64,6 +67,7 @@ class AuthorCreate(AuthorBase):
     birth_place: str
     lat: str
     long: str
+    country: str
 
 
 class Extraction(BaseModel):

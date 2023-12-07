@@ -1,0 +1,27 @@
+# Click the Variables button, above, to create your own variables.
+PUT /text_index
+{
+    "mappings": {
+      "properties": {
+        "author": { "type": "text" },
+        "title": { "type": "text" },
+        "year": { "type": "long" },
+        "language": { "type": "keyword" },
+        "text": { "type": "text" },
+        "embedding": { "type": "dense_vector", "dims": 512 }
+      }
+    }
+}
+
+PUT /text_index/_doc/1
+{
+  "author": "Yusuf Akalin",
+  "title": "My first Text",
+  "year": 2023,
+  "language": "de",
+  "text": "Hallo, ich bin der Yusuf. Ich bin 18 Jahre alt und freue mich, dich kennenzulernen!"
+}
+
+DELETE /text_index
+
+GET text_index/_doc/1

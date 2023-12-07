@@ -38,6 +38,7 @@ class Author(Base):
     birth_place = Column(String)
     lat = Column(String)
     long = Column(String)
+    country = Column(String)
 
     def __str__(self):
         return f"{self.name}: {self.birthplace}"

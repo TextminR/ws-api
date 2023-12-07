@@ -14,44 +14,47 @@ gutendex_array = response.json().get("results")
 
 for book in gutendex_array:
 
-    if len(book.get("authors")) == 0:
-        autorname = "unknown"
-    else:
-        autor = book.get("authors")[0]
-        autorname = autor.get("name")
+    if not book.get("copyright"):
 
-    if len(book.get("languages")) == 0:
-        language = "unknown"
-    else:
-        language = book.get("languages")[0]
+        if len(book.get("authors")) == 0:
+            autorname = "unknown"
+        else:
+            autor = book.get("authors")[0]
+            autorname = autor.get("name")
 
-    if autor.get("birth_year") is not None and autor.get("death_year") is not None:
-        year = (autor.get("birth_year") + autor.get("death_year"))/2
-    else:
-        year = -111111111
+        if len(book.get("languages")) == 0:
+            language = "unknown"
+        else:
+            language = book.get("languages")[0]
 
-    titel = book.get("title")
-    text = book.get("formats").get("text/plain; charset=utf-8", None)
+        if autor.get("birth_year") is not None and autor.get("death_year") is not None:
+            year = (autor.get("birth_year") + autor.get("death_year")) / 2
+        else:
+            year = -111111111
 
-    if text is None:
-        text = book.get("formats").get("text/plain; charset=us-ascii", None)
+        titel = book.get("title")
+        text = book.get("formats").get("text/plain; charset=utf-8", None)
 
-    if text is None:
-        text = book.get("formats").get("text/plain", None)
+        # if text is None:
+        # text = book.get("formats").get("text/plain; charset=us-ascii", None)
 
-    if text is not None:
-      text = requests.get(text).text
+        if text is None:
+            text = book.get("formats").get("text/plain", None)
 
-      index_start = text.find("** START")
-      index_start = text.find('\n', index_start) + 1
-      index_end = text.find("** END")
-      text = text[index_start:index_end]
-      text = text.strip().replace("\n", " ").replace("\r", " ")
+        if text is not None:
+            text = requests.get(text).text
 
-      sql = "INSERT INTO textdata (author, title, text, year, language) VALUES (%s, %s, %s, %s, %s)"
-      values = (autorname, titel, text.strip(), year, language)  # Entfernen Sie überflüssige Leerzeichen am Anfang und Ende des Texts
-      cursor.execute(sql, values)
-      connection.commit()
+            index_start = text.find("** START")
+            index_start = text.find('\n', index_start) + 1
+            index_end = text.find("** END")
+            text = text[index_start:index_end]
+            text = text.strip().replace("\n", " ").replace("\r", " ")
+
+            sql = "INSERT INTO textdata (author, title, text, year, language) VALUES (%s, %s, %s, %s, %s)"
+            values = (autorname, titel, text.strip(), year,
+                      language)  # Entfernen Sie überflüssige Leerzeichen am Anfang und Ende des Texts
+            cursor.execute(sql, values)
+            connection.commit()
 
 # while response.json().get("next"):
 #

@@ -133,6 +133,10 @@ def get_newsarticles(db: Session = Depends(get_db)):
 def create_newsarticle(data: schemas.NewsarticleCreate, db: Session = Depends(get_db)):
     return crud.create_newsarticle(db, data)
 
+@app.put("/updateAuthor", response_model=str)
+async def updateAuthor(data: schemas.Author, db: Session = Depends(get_db)):
+    return crud.update_author(data, db)
+
 
 @app.get("/")
 async def hello():
