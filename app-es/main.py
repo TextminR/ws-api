@@ -1,7 +1,7 @@
 import uvicorn
 from fastapi import FastAPI
 import model.msg as msg
-from es_client import crud, client
+from model import crud, client
 
 app = FastAPI()
 ES = client.get_es_client()
@@ -17,6 +17,12 @@ def to_text_list(texts):
 @app.post("/text_metadata", response_model=msg.Response)
 async def metadata(id: str = None, minYear: int = None, maxYear: int = None, author: str = None, language: str = None):
     data = crud.get_metadata(client=ES, id=id, minYear=minYear, maxYear=maxYear, author=author, language=language)
+    return msg.Response(status="200", message="OK", data=data)
+
+
+@app.post("/texts", response_model=msg.Response)
+async def texts(id: str = None, minYear: int = None, maxYear: int = None, author: str = None, language: str = None):
+    data = crud.get_texts(client=ES, id=id, minYear=minYear, maxYear=maxYear, author=author, language=language)
     return msg.Response(status="200", message="OK", data=data)
 
 

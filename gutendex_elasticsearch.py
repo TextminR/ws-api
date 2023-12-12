@@ -1,16 +1,14 @@
 import requests
 from elasticsearch import Elasticsearch
-import tensorflow as tf
-from transformers import AutoModel
-from ssl import create_default_context
+#import tensorflow as tf
+#from transformers import AutoModel
 
-context = create_default_context(cafile="http_ca.crt")
-ELASTIC_PASSWORD = "NXbH08hH*jzw=swo6AC3"
+ELASTIC_PASSWORD = ""
 
 es = Elasticsearch(
     ['https://localhost:9200'],
     basic_auth=('elastic', ELASTIC_PASSWORD),
-    ssl_context=context
+    verify_certs=False
 )
 print(es.info())
 response = requests.get("https://gutendex.com/books/?page=1", headers={"Accept": "application/json"})
@@ -18,7 +16,7 @@ gutendex_array = response.json().get("results")
 
 for book in gutendex_array:
 
-    if not book.get("copyright"):
+    #if not book.get("copyright"):
 
         if len(book.get("authors")) == 0:
             autorname = "unknown"
@@ -54,24 +52,23 @@ for book in gutendex_array:
             text = text[index_start:index_end]
             text = text.strip().replace("\n", " ").replace("\r", " ")
 
-            model = AutoModel.from_pretrained('jinaai/jina-embeddings-v2-small-en', trust_remote_code=True)
-            embedding = model.encode([text])
+            #model = AutoModel.from_pretrained('jinaai/jina-embeddings-v2-small-en', trust_remote_code=True)
+            #embedding = model.encode([text])
 
-            if embedding.shape[1] != 512:
+            #if embedding.shape[1] != 512:
                 # Hier verwenden wir eine einfache lineare Schicht zur Dimensionalitätsreduktion/Erhöhung
-                resize_layer = tf.keras.layers.Dense(512, input_shape=(embedding.shape[1],))
-                embedding = resize_layer(embedding)
+                #resize_layer = tf.keras.layers.Dense(512, input_shape=(embedding.shape[1],))
+                #embedding = resize_layer(embedding)
 
             document = {
                 "author": autorname,
                 "title": titel,
                 "year": year,
                 "language": language,
-                "text": text,
-                "embedding": embedding[0]  # Beispiel-Embedding
+                "source": "gutenberg",
+                "text": text
+                #"embedding": embedding[0]
             }
-
-            print(autorname, titel, year, language, embedding)
 
             res = es.index(index="text_index", document=document)
             print(res['result'])
