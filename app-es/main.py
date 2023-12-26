@@ -7,22 +7,42 @@ app = FastAPI()
 ES = client.get_es_client()
 
 
-def to_text_list(texts):
-    text_list = []
-    for text in texts:
-        text_list.append(text)
-    return text_list
-
-
-@app.post("/text_metadata", response_model=msg.Response)
-async def metadata(id: str = None, minYear: int = None, maxYear: int = None, author: str = None, language: str = None):
-    data = crud.get_metadata(client=ES, id=id, minYear=minYear, maxYear=maxYear, author=author, language=language)
+@app.get("/text_metadata", response_model=msg.Response)
+async def text_metadata(id: str = None, title: str = None, minYear: int = None, maxYear: int = None, author: str = None,
+                        language: str = None):
+    data = await crud.get_texts(client=ES, id=id, title=title, minYear=minYear, maxYear=maxYear, author=author,
+                                language=language, include_text=False)
     return msg.Response(status="200", message="OK", data=data)
 
 
-@app.post("/texts", response_model=msg.Response)
-async def texts(id: str = None, minYear: int = None, maxYear: int = None, author: str = None, language: str = None):
-    data = crud.get_texts(client=ES, id=id, minYear=minYear, maxYear=maxYear, author=author, language=language)
+@app.get("/texts", response_model=msg.Response)
+async def texts(id: str = None, title: str = None, minYear: int = None, maxYear: int = None, author: str = None,
+                language: str = None):
+    data = await crud.get_texts(client=ES, id=id, title=title, minYear=minYear, maxYear=maxYear, author=author,
+                                language=language, include_text=True)
+    return msg.Response(status="200", message="OK", data=data)
+
+
+@app.get("/authors", response_model=msg.Response)
+async def authors(id: str = None, name: str = None, birth_place: str = None, country: str = None):
+    data = await crud.get_authors(client=ES, id=id, name=name, birth_place=birth_place, country=country)
+    return msg.Response(status="200", message="OK", data=data)
+
+
+@app.get("/newsarticles", response_model=msg.Response)
+async def newsarticles(id: str = None, title: str = None, minDate: str = None, maxDate: str = None, source: str = None,
+                       author: str = None, language: str = None):
+    data = await crud.get_newsarticles(client=ES, id=id, title=title, minDate=minDate, maxDate=maxDate, source=source,
+                                       author=author, language=language, include_text=True)
+    return msg.Response(status="200", message="OK", data=data)
+
+
+@app.get("/newsarticle_metadata", response_model=msg.Response)
+async def newsarticle_metadata(id: str = None, title: str = None, minDate: str = None, maxDate: str = None,
+                               source: str = None,
+                               author: str = None, language: str = None):
+    data = await crud.get_newsarticles(client=ES, id=id, title=title, minDate=minDate, maxDate=maxDate, source=source,
+                                       author=author, language=language, include_text=False)
     return msg.Response(status="200", message="OK", data=data)
 
 

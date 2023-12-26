@@ -3,21 +3,21 @@ from elasticsearch import Elasticsearch
 #import tensorflow as tf
 #from transformers import AutoModel
 
-ELASTIC_PASSWORD = ""
-
 es = Elasticsearch(
-    ['https://localhost:9200'],
-    basic_auth=('elastic', ELASTIC_PASSWORD),
+    ['http://localhost:9200'],
+    basic_auth=("elastic", "GZLhtJXfckU-DcYQLgYU"),
     verify_certs=False
 )
 print(es.info())
 response = requests.get("https://gutendex.com/books/?page=1", headers={"Accept": "application/json"})
 gutendex_array = response.json().get("results")
+#model = AutoModel.from_pretrained('jinaai/jina-embeddings-v2-small-en', trust_remote_code=True)
+#i = 1
 
 for book in gutendex_array:
 
-    #if not book.get("copyright"):
-
+    if not book.get("copyright"):
+        autor = ""
         if len(book.get("authors")) == 0:
             autorname = "unknown"
         else:
@@ -50,15 +50,17 @@ for book in gutendex_array:
             index_start = text.find('\n', index_start) + 1
             index_end = text.find("** END")
             text = text[index_start:index_end]
-            text = text.strip().replace("\n", " ").replace("\r", " ")
 
-            #model = AutoModel.from_pretrained('jinaai/jina-embeddings-v2-small-en', trust_remote_code=True)
-            #embedding = model.encode([text])
+            #text_chunks = [chunk.strip() for chunk in text.split("\r\n\r\n") if chunk.strip()]
+            #print(text)
+            #for chunk in text_chunks:
+                #print(chunk)
+                #chunk = chunk.strip().replace("\n", " ").replace("\r", " ")
+                #embedding = model.encode([chunk])
 
-            #if embedding.shape[1] != 512:
-                # Hier verwenden wir eine einfache lineare Schicht zur Dimensionalitätsreduktion/Erhöhung
-                #resize_layer = tf.keras.layers.Dense(512, input_shape=(embedding.shape[1],))
-                #embedding = resize_layer(embedding)
+                #if embedding.shape[1] != 512:
+                    #resize_layer = tf.keras.layers.Dense(512, input_shape=(embedding.shape[1],))
+                    #embedding = resize_layer(embedding)
 
             document = {
                 "author": autorname,
@@ -67,8 +69,9 @@ for book in gutendex_array:
                 "language": language,
                 "source": "gutenberg",
                 "text": text
-                #"embedding": embedding[0]
+                #"embedding": [0]
             }
 
             res = es.index(index="text_index", document=document)
-            print(res['result'])
+                #print(f"Dokument {titel} mit ID {i} erstellt.")
+    #i += 1
