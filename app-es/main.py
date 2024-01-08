@@ -1,5 +1,7 @@
+from typing import Annotated
+
 import uvicorn
-from fastapi import FastAPI
+from fastapi import FastAPI, Query
 import model.msg as msg
 from model import crud, client
 
@@ -8,10 +10,11 @@ ES = client.get_es_client()
 
 
 @app.get("/text_metadata", response_model=msg.Response)
-async def text_metadata(id: str = None, title: str = None, minYear: int = None, maxYear: int = None, author: str = None,
-                        language: str = None):
+async def text_metadata(id: Annotated[list, Query()] = None, title: Annotated[list, Query()] = None, minYear: int = None, maxYear: int = None,
+                        author: Annotated[list, Query()] = None,
+                        language: str = None, include_text: bool = False, include_embeddings: bool = False):
     data = await crud.get_texts(client=ES, id=id, title=title, minYear=minYear, maxYear=maxYear, author=author,
-                                language=language, include_text=False)
+                                language=language, include_text=include_text, include_embeddings=include_embeddings)
     return msg.Response(status="200", message="OK", data=data)
 
 
