@@ -4,6 +4,10 @@ WORKDIR /code
 
 COPY ./requirements-es.txt /code/requirements.txt
 
+RUN apt-get update && apt-get install -y build-essential
+
+RUN pip install --upgrade pip
+
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
 COPY /app-es /code/app

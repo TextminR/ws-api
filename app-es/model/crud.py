@@ -150,7 +150,7 @@ async def build_query_text(client, id, author, title, minYear, maxYear, language
         query_parts.append({"terms": {"title": title}})
 
     if language:
-        query_parts.append({"terms": {"language": language}})
+        query_parts.append({"match": {"language": language}})
 
     range_query = {}
     if minYear:
