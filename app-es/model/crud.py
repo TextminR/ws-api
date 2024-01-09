@@ -9,8 +9,8 @@ async def scroller_text(client, include_text, include_embeddings, only_embedding
                 client,
                 query={"query": {"match_all": {}}, "_source": ["embeddings"]},
                 index="texts",
-                scroll="2m",
-                size=100
+                scroll="1m",
+                size=1000
         ):
             result.append(hit)
 
@@ -19,8 +19,8 @@ async def scroller_text(client, include_text, include_embeddings, only_embedding
                 client,
                 query={"query": {"match_all": {}}, "_source": ["author", "title", "year", "language", "source"]},
                 index="texts",
-                scroll="2m",
-                size=100
+                scroll="1m",
+                size=1000
         ):
             result.append(hit)
     elif include_text and not include_embeddings:
@@ -28,8 +28,8 @@ async def scroller_text(client, include_text, include_embeddings, only_embedding
                 client,
                 query={"query": {"match_all": {}}, "_source": ["author", "title", "year", "language", "source", "text"]},
                 index="texts",
-                scroll="2m",
-                size=100
+                scroll="1m",
+                size=1000
         ):
             result.append(hit)
     elif not include_text and include_embeddings:
@@ -37,8 +37,8 @@ async def scroller_text(client, include_text, include_embeddings, only_embedding
                 client,
                 query={"query": {"match_all": {}}, "_source": ["author", "title", "year", "language", "source", "embeddings"]},
                 index="texts",
-                scroll="2m",
-                size=100
+                scroll="1m",
+                size=1000
         ):
             result.append(hit)
     elif include_text and include_embeddings:
@@ -52,8 +52,8 @@ async def scroller_default(client):
             client,
             query={"query": {"match_all": {}}},
             index="authors",
-            scroll="2m",
-            size=100
+            scroll="1m",
+            size=1000
     ):
         result.append(hit)
     return result
