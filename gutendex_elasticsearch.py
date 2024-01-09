@@ -1,8 +1,7 @@
 import requests
 from elasticsearch import Elasticsearch
-from transformers import AutoModel, AutoTokenizer, BertTokenizerFast
+from transformers import AutoModel, BertTokenizerFast
 import transformers as tf
-import numpy as np
 
 response = requests.get("https://gutendex.com/books/?page=1", headers={"Accept": "application/json"})
 gutendex_array = response.json().get("results")
@@ -26,7 +25,7 @@ def split_string_with_limit(text: str, limit: int):
 
 es = Elasticsearch(
     ['https://localhost:9200'],
-    basic_auth=("elastic", "GZLhtJXfckU-DcYQLgYU"),
+    basic_auth=("elastic", "R8QwVUGht-_aFrbco=C1"),
     verify_certs=False
 )
 print(es.info())
@@ -71,6 +70,7 @@ for book in gutendex_array:
 
             parts = split_string_with_limit(text, 8150)
             embeddings = []
+            text_parts = []
 
             for part in parts:
                 embedding = (model.encode([part]))
@@ -80,6 +80,7 @@ for book in gutendex_array:
                     embedding = resize_layer(embedding)
 
                 embeddings.append(embedding)
+                text_parts.append({"part": part})
 
             doc_embeddings = []
             for emb in embeddings:
@@ -91,7 +92,7 @@ for book in gutendex_array:
                 "year": year,
                 "language": language,
                 "source": "gutenberg",
-                "text": text,
+                "text": text_parts,
                 "embeddings": doc_embeddings
             }
 
