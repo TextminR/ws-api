@@ -2,7 +2,7 @@ from elasticsearch import Elasticsearch
 from elasticsearch.helpers import async_scan
 
 
-async def scroller_text(client, include_text, include_embeddings, only_embeddings):
+async def scroller_text(client, only_text, only_embeddings):
     result = []
     if only_embeddings:
         async for hit in async_scan(
@@ -14,35 +14,27 @@ async def scroller_text(client, include_text, include_embeddings, only_embedding
         ):
             result.append(hit)
 
-    elif not include_text and not include_embeddings:
+    elif only_text:
         async for hit in async_scan(
                 client,
-                query={"query": {"match_all": {}}, "_source": ["author", "title", "year", "language", "source"]},
+                query={"query": {"match_all": {}}, "_source": ["text"]},
                 index="texts",
                 scroll="1m",
                 size=1000
         ):
             result.append(hit)
-    elif include_text and not include_embeddings:
+
+
+    elif not only_text and not only_embeddings:
         async for hit in async_scan(
                 client,
-                query={"query": {"match_all": {}}, "_source": ["author", "title", "year", "language", "source", "text"]},
+                query={"query": {"match_all": {}},
+                       "_source": ["author", "title", "year", "language", "source"]},
                 index="texts",
                 scroll="1m",
                 size=1000
         ):
             result.append(hit)
-    elif not include_text and include_embeddings:
-        async for hit in async_scan(
-                client,
-                query={"query": {"match_all": {}}, "_source": ["author", "title", "year", "language", "source", "embeddings"]},
-                index="texts",
-                scroll="1m",
-                size=1000
-        ):
-            result.append(hit)
-    elif include_text and include_embeddings:
-        result = scroller_default(client)
     return result
 
 
@@ -86,7 +78,7 @@ async def data_to_list_author(response, scroller):
     return result
 
 
-async def data_to_list_text(response, include_text, include_embeddings, only_embeddings, scroller):
+async def data_to_list_text(response, only_text, only_embeddings, scroller):
     if response != "No data":
         result = []
         document = {}
@@ -95,7 +87,7 @@ async def data_to_list_text(response, include_text, include_embeddings, only_emb
         else:
             zw = response
         for doc in zw:
-            if not only_embeddings:
+            if not only_embeddings and not only_text:
                 document = {
                     "_id": doc['_id'],
                     "author": doc['_source']['author'],
@@ -104,10 +96,17 @@ async def data_to_list_text(response, include_text, include_embeddings, only_emb
                     "language": doc['_source']['language'],
                     "source": doc['_source']['source']
                 }
-                if include_text:
-                    document["text"] = doc['_source']['text']
-            if include_embeddings or only_embeddings:
-                document["embeddings"] = doc['_source']['embeddings']
+
+            elif only_text:
+                document = {
+                    "text": doc['_source']['text']
+                }
+
+            elif only_embeddings:
+                document = {
+                    "text": doc['_source']['embeddings']
+                }
+
             result.append(document)
         return result
     return "No data"
@@ -144,13 +143,13 @@ async def data_to_list_newsarticle(response, include_text, scroller):
     return result
 
 
-async def build_query_text(client, id, author, title, minYear, maxYear, language, include_text, include_embeddings, only_embeddings):
+async def build_query_text(client, id, author, title, minYear, maxYear, language, only_text, only_embeddings):
     query_parts = []
     response = "No data"
 
     if not id and not author and not title and not minYear and not maxYear and not language:
-        zw = await scroller_text(client=client, include_text=include_text, include_embeddings=include_embeddings, only_embeddings=only_embeddings)
-        return await data_to_list_text(response=zw, include_text=include_text, include_embeddings=include_embeddings, only_embeddings=only_embeddings, scroller=True)
+        zw = await scroller_text(client=client, only_text=only_text, only_embeddings=only_embeddings)
+        return await data_to_list_text(response=zw, only_text=only_text, only_embeddings=only_embeddings, scroller=True)
 
     if id:
         query_parts.append({"terms": {"_id": id}})
@@ -177,20 +176,14 @@ async def build_query_text(client, id, author, title, minYear, maxYear, language
         response = await client.search(index="texts", body={"query": {"bool": {"must": query_parts}}, "size": 100,
                                                             "_source": ["embeddings"]})
 
-    elif include_text and include_embeddings:
-        response = await client.search(index="texts", body={"query": {"bool": {"must": query_parts}}, "size": 100})
+    elif only_text:
+        response = await client.search(index="texts", body={"query": {"bool": {"must": query_parts}}, "size": 100,
+                                                            "_source": ["text"]})
     else:
-        if include_text and not include_embeddings:
-            response = await client.search(index="texts", body={"query": {"bool": {"must": query_parts}}, "size": 100,
-                                                                "_source": ["author", "title", "year", "language",
-                                                                            "source", "text"]})
-        if include_embeddings and not include_text:
-            response = await client.search(index="texts", body={"query": {"bool": {"must": query_parts}}, "size": 100,
-                                                                "_source": ["author", "title", "year", "language",
-                                                                            "source", "embeddings"]})
-        if not include_text and not include_embeddings:
-            response = await client.search(index="texts", body={"query": {"bool": {"must": query_parts}}, "size": 100})
-    return await data_to_list_text(response=response, include_text=include_text, include_embeddings=include_embeddings, only_embeddings=only_embeddings, scroller=False)
+        response = await client.search(index="texts", body={"query": {"bool": {"must": query_parts}}, "size": 100,
+                                                            "_source": ["id", "title", "author", "year", "language", "source"]})
+    return await data_to_list_text(response=response, only_text=only_text, only_embeddings=only_embeddings,
+                                   scroller=False)
 
 
 async def build_query_author(client, id, name, birth_place, country):
@@ -255,9 +248,8 @@ async def build_query_newsarticle(client, id, title, minDate, maxDate, source, a
 
 async def get_texts(client: Elasticsearch, id: list[str], title: list[str], minYear: int, maxYear: int,
                     author: list[str],
-                    language: str, include_text, include_embeddings, only_embeddings):
-    return await build_query_text(client, id, author, title, minYear, maxYear, language, include_text,
-                                  include_embeddings, only_embeddings)
+                    language: str, only_text, only_embeddings):
+    return await build_query_text(client, id, author, title, minYear, maxYear, language, only_text, only_embeddings)
 
 
 async def get_authors(client: Elasticsearch, id: str, name: str, birth_place: str, country: str):

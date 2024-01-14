@@ -3,27 +3,55 @@ from typing import Annotated
 import uvicorn
 from fastapi import FastAPI, Query
 import model.msg as msg
-from model import crud, client
+from model import crud, client, extract_ner
+from transformers import pipeline
 
 app = FastAPI()
 ES = client.get_es_client()
 
-
-@app.get("/text_metadata", response_model=msg.Response)
-async def text_metadata(id: Annotated[list, Query()] = None, title: Annotated[list, Query()] = None, minYear: int = None, maxYear: int = None,
-                        author: Annotated[list, Query()] = None,
-                        language: str = None, include_text: bool = False, include_embeddings: bool = False, only_embeddings: bool = False):
-    data = await crud.get_texts(client=ES, id=id, title=title, minYear=minYear, maxYear=maxYear, author=author,
-                                language=language, include_text=include_text, include_embeddings=include_embeddings, only_embeddings=only_embeddings)
-    return msg.Response(status="200", message="OK", data=data)
-
+model_id = 'textminr/ner-multilingual-bert'
+classifier = pipeline(
+    'ner',
+    model=model_id,
+    aggregation_strategy='simple'
+)
 
 @app.get("/texts", response_model=msg.Response)
-async def texts(id: str = None, title: str = None, minYear: int = None, maxYear: int = None, author: str = None,
+async def texts(id: Annotated[list, Query()] = None, title: Annotated[list, Query()] = None, minYear: int = None,
+                maxYear: int = None,
+                author: Annotated[list, Query()] = None,
                 language: str = None):
     data = await crud.get_texts(client=ES, id=id, title=title, minYear=minYear, maxYear=maxYear, author=author,
-                                language=language, include_text=True)
+                                language=language, only_text=True, only_embeddings=False)
     return msg.Response(status="200", message="OK", data=data)
+
+
+@app.get("/texts/metadata", response_model=msg.Response)
+async def text_metadata(id: Annotated[list, Query()] = None, title: Annotated[list, Query()] = None,
+                        minYear: int = None, maxYear: int = None,
+                        author: Annotated[list, Query()] = None,
+                        language: str = None):
+    data = await crud.get_texts(client=ES, id=id, title=title, minYear=minYear, maxYear=maxYear, author=author,
+                                language=language, only_text=False, only_embeddings=False)
+    return msg.Response(status="200", message="OK", data=data)
+
+
+@app.get("/texts/embeddings", response_model=msg.Response)
+async def text_metadata(id: Annotated[list, Query()] = None, title: Annotated[list, Query()] = None,
+                        minYear: int = None, maxYear: int = None,
+                        author: Annotated[list, Query()] = None,
+                        language: str = None):
+    data = await crud.get_texts(client=ES, id=id, title=title, minYear=minYear, maxYear=maxYear, author=author,
+                                language=language, only_text=False, only_embeddings=True)
+    return msg.Response(status="200", message="OK", data=data)
+
+
+@app.post("/extract_data", response_model=msg.Response)
+async def extract_data(texts: list[str] = None):
+    if texts is not None:
+        data = await extract_ner.extraction(classifier, texts)
+        return msg.Response(status="200", message="OK", data=data)
+    return msg.Response(status="400", message="NO DATA", data="")
 
 
 @app.get("/authors", response_model=msg.Response)
@@ -40,7 +68,7 @@ async def newsarticles(id: str = None, title: str = None, minDate: str = None, m
     return msg.Response(status="200", message="OK", data=data)
 
 
-@app.get("/newsarticle_metadata", response_model=msg.Response)
+@app.get("/newsarticles/metadata", response_model=msg.Response)
 async def newsarticle_metadata(id: str = None, title: str = None, minDate: str = None, maxDate: str = None,
                                source: str = None,
                                author: str = None, language: str = None):
