@@ -16,6 +16,7 @@ classifier = pipeline(
     aggregation_strategy='simple'
 )
 
+
 @app.get("/texts", response_model=msg.Response)
 async def texts(id: Annotated[list, Query()] = None, title: Annotated[list, Query()] = None, minYear: int = None,
                 maxYear: int = None,
