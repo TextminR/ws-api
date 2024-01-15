@@ -4,17 +4,9 @@ import uvicorn
 from fastapi import FastAPI, Query
 import model.msg as msg
 from model import crud, client, extract_ner
-from transformers import pipeline
 
 app = FastAPI()
 ES = client.get_es_client()
-
-model_id = 'textminr/ner-multilingual-bert'
-classifier = pipeline(
-    'ner',
-    model=model_id,
-    aggregation_strategy='simple'
-)
 
 
 @app.get("/texts", response_model=msg.Response)
@@ -50,7 +42,7 @@ async def text_metadata(id: Annotated[list, Query()] = None, title: Annotated[li
 @app.post("/extract_data", response_model=msg.Response)
 async def extract_data(texts: list[str] = None):
     if texts is not None:
-        data = await extract_ner.extraction(classifier, texts)
+        data = await extract_ner.extraction(texts)
         return msg.Response(status="200", message="OK", data=data)
     return msg.Response(status="400", message="NO DATA", data="")
 
