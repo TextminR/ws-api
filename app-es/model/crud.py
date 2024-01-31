@@ -2,7 +2,7 @@ from elasticsearch import Elasticsearch
 from elasticsearch.helpers import async_scan
 
 
-async def scroller_text(client, only_text, only_embeddings):
+async def scroller_text(client, only_text, only_embeddings, include_text):
     result = []
     if only_embeddings:
         async for hit in async_scan(
@@ -30,6 +30,17 @@ async def scroller_text(client, only_text, only_embeddings):
                 client,
                 query={"query": {"match_all": {}},
                        "_source": ["author", "title", "year", "language", "source"]},
+                index="texts",
+                scroll="1m",
+                size=1000
+        ):
+            result.append(hit)
+
+    elif include_text:
+        async for hit in async_scan(
+                client,
+                query={"query": {"match_all": {}},
+                       "_source": ["author", "title", "year", "language", "source", "text"]},
                 index="texts",
                 scroll="1m",
                 size=1000
@@ -78,7 +89,7 @@ async def data_to_list_author(response, scroller):
     return result
 
 
-async def data_to_list_text(response, only_text, only_embeddings, scroller):
+async def data_to_list_text(response, only_text, only_embeddings, include_text, scroller):
     if response != "No data":
         result = []
         document = {}
@@ -104,8 +115,11 @@ async def data_to_list_text(response, only_text, only_embeddings, scroller):
 
             elif only_embeddings:
                 document = {
-                    "text": doc['_source']['embeddings']
+                    "embeddings": doc['_source']['embeddings']
                 }
+
+            if include_text:
+                document["text"] = doc['_source']['text']
 
             result.append(document)
         return result
@@ -143,13 +157,16 @@ async def data_to_list_newsarticle(response, include_text, scroller):
     return result
 
 
-async def build_query_text(client, id, author, title, minYear, maxYear, language, only_text, only_embeddings):
+async def build_query_text(client, id, author, title, minYear, maxYear, language, only_text, only_embeddings,
+                           include_text):
     query_parts = []
     response = "No data"
 
     if not id and not author and not title and not minYear and not maxYear and not language:
-        zw = await scroller_text(client=client, only_text=only_text, only_embeddings=only_embeddings)
-        return await data_to_list_text(response=zw, only_text=only_text, only_embeddings=only_embeddings, scroller=True)
+        zw = await scroller_text(client=client, only_text=only_text, only_embeddings=only_embeddings,
+                                 include_text=include_text)
+        return await data_to_list_text(response=zw, only_text=only_text, only_embeddings=only_embeddings, scroller=True,
+                                       include_text=include_text)
 
     if id:
         query_parts.append({"terms": {"_id": id}})
@@ -173,17 +190,23 @@ async def build_query_text(client, id, author, title, minYear, maxYear, language
         query_parts.append({"range": {"year": range_query}})
 
     if only_embeddings:
-        response = await client.search(index="texts", body={"query": {"bool": {"must": query_parts}}, "size": 100,
+        response = await client.search(index="texts", body={"query": {"bool": {"must": query_parts}}, "size": 1000,
                                                             "_source": ["embeddings"]})
 
     elif only_text:
-        response = await client.search(index="texts", body={"query": {"bool": {"must": query_parts}}, "size": 100,
+        response = await client.search(index="texts", body={"query": {"bool": {"must": query_parts}}, "size": 1000,
                                                             "_source": ["text"]})
-    else:
-        response = await client.search(index="texts", body={"query": {"bool": {"must": query_parts}}, "size": 100,
-                                                            "_source": ["id", "title", "author", "year", "language", "source"]})
+
+    elif include_text:
+        response = await client.search(index="texts", body={"query": {"bool": {"must": query_parts}}, "size": 1000,
+                                                            "_source": ["id", "title", "author", "year", "language",
+                                                                        "source", "text"]})
+    elif not only_text and not only_embeddings and not include_text:
+        response = await client.search(index="texts", body={"query": {"bool": {"must": query_parts}}, "size": 1000,
+                                                            "_source": ["id", "title", "author", "year", "language",
+                                                                        "source"]})
     return await data_to_list_text(response=response, only_text=only_text, only_embeddings=only_embeddings,
-                                   scroller=False)
+                                   scroller=False, include_text=include_text)
 
 
 async def build_query_author(client, id, name, birth_place, country):
@@ -201,7 +224,7 @@ async def build_query_author(client, id, name, birth_place, country):
     if country:
         query_parts.append({"match": {"country": country}})
 
-    response = await client.search(index="authors", body={"query": {"bool": {"must": query_parts}}, "size": 100})
+    response = await client.search(index="authors", body={"query": {"bool": {"must": query_parts}}, "size": 1000})
     return await data_to_list_author(response=response, scroller=False)
 
 
@@ -237,10 +260,10 @@ async def build_query_newsarticle(client, id, title, minDate, maxDate, source, a
 
     if include_text:
         response = await client.search(index="newsarticles",
-                                       body={"query": {"bool": {"must": query_parts}}, "size": 100})
+                                       body={"query": {"bool": {"must": query_parts}}, "size": 1000})
     else:
         response = await client.search(index="newsarticles",
-                                       body={"query": {"bool": {"must": query_parts}}, "size": 100,
+                                       body={"query": {"bool": {"must": query_parts}}, "size": 1000,
                                              "_source": ["title", "date", "source", "author",
                                                          "language"]})
     return data_to_list_newsarticle(response, include_text, False)
@@ -248,8 +271,9 @@ async def build_query_newsarticle(client, id, title, minDate, maxDate, source, a
 
 async def get_texts(client: Elasticsearch, id: list[str], title: list[str], minYear: int, maxYear: int,
                     author: list[str],
-                    language: str, only_text, only_embeddings):
-    return await build_query_text(client, id, author, title, minYear, maxYear, language, only_text, only_embeddings)
+                    language: str, only_text, only_embeddings, include_text):
+    return await build_query_text(client, id, author, title, minYear, maxYear, language, only_text, only_embeddings,
+                                  include_text)
 
 
 async def get_authors(client: Elasticsearch, id: str, name: str, birth_place: str, country: str):
