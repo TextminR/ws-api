@@ -12,11 +12,11 @@ from model import crud, client, extract_ner
 ES = client.get_es_client()
 app = FastAPI()
 api_key_header = APIKeyHeader(name="X-API-Key")
-api_keys = os.getenv("API-KEYS")
+api_key = os.getenv("API_KEY")
 
 
 def get_api_key(api_key_header: str = Security(api_key_header)) -> str:
-    if api_key_header in api_keys:
+    if api_key_header == api_key:
         return api_key_header
     raise HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
@@ -29,9 +29,9 @@ async def texts(api_key: str = Security(get_api_key), id: Annotated[list, Query(
                 title: Annotated[list, Query()] = None, minYear: int = None,
                 maxYear: int = None,
                 author: Annotated[list, Query()] = None,
-                language: str = None):
+                language: str = None, combined_texts: bool = False):
     data = await crud.get_texts(client=ES, id=id, title=title, minYear=minYear, maxYear=maxYear, author=author,
-                                language=language, only_text=True, only_embeddings=False, include_text=False)
+                                language=language, only_text=True, only_embeddings=False, include_text=False, combined_texts=combined_texts)
     return msg.Response(status="200", message="OK", data=data)
 
 
@@ -42,7 +42,7 @@ async def text_metadata(api_key: str = Security(get_api_key), id: Annotated[list
                         author: Annotated[list, Query()] = None,
                         language: str = None):
     data = await crud.get_texts(client=ES, id=id, title=title, minYear=minYear, maxYear=maxYear, author=author,
-                                language=language, only_text=False, only_embeddings=False, include_text=False)
+                                language=language, only_text=False, only_embeddings=False, include_text=False, combined_texts=False)
     return msg.Response(status="200", message="OK", data=data)
 
 
@@ -51,9 +51,9 @@ async def text_metadata_with_texts(api_key: str = Security(get_api_key), id: Ann
                                    title: Annotated[list, Query()] = None,
                                    minYear: int = None, maxYear: int = None,
                                    author: Annotated[list, Query()] = None,
-                                   language: str = None):
+                                   language: str = None, combined_texts: bool = False):
     data = await crud.get_texts(client=ES, id=id, title=title, minYear=minYear, maxYear=maxYear, author=author,
-                                language=language, only_text=False, only_embeddings=False, include_text=True)
+                                language=language, only_text=False, only_embeddings=False, include_text=True, combined_texts=combined_texts)
     return msg.Response(status="200", message="OK", data=data)
 
 
@@ -64,7 +64,7 @@ async def text_metadata(api_key: str = Security(get_api_key), id: Annotated[list
                         author: Annotated[list, Query()] = None,
                         language: str = None):
     data = await crud.get_texts(client=ES, id=id, title=title, minYear=minYear, maxYear=maxYear, author=author,
-                                language=language, only_text=False, only_embeddings=True, include_text=False)
+                                language=language, only_text=False, only_embeddings=True, include_text=False, combined_texts=False)
     return msg.Response(status="200", message="OK", data=data)
 
 

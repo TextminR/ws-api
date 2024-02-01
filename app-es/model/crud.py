@@ -89,10 +89,11 @@ async def data_to_list_author(response, scroller):
     return result
 
 
-async def data_to_list_text(response, only_text, only_embeddings, include_text, scroller):
+async def data_to_list_text(response, only_text, only_embeddings, include_text, scroller, combined_texts):
     if response != "No data":
         result = []
         document = {}
+        combined = ""
         if not scroller:
             zw = response['hits']['hits']
         else:
@@ -109,9 +110,18 @@ async def data_to_list_text(response, only_text, only_embeddings, include_text, 
                 }
 
             elif only_text:
-                document = {
-                    "text": doc['_source']['text']
-                }
+                if combined_texts:
+                    for part in doc['_source']['text']:
+                        combined = combined + " " + part["part"]
+
+                    document = {
+                        "text": combined
+                    }
+
+                else:
+                    document = {
+                        "text": doc['_source']['text']
+                    }
 
             elif only_embeddings:
                 document = {
@@ -119,7 +129,14 @@ async def data_to_list_text(response, only_text, only_embeddings, include_text, 
                 }
 
             if include_text:
-                document["text"] = doc['_source']['text']
+                if combined_texts:
+                    for part in doc['_source']['text']:
+                        combined = combined + " " + part["part"]
+
+                    document["text"] = combined
+
+                else:
+                    document["text"] = doc['_source']['text']
 
             result.append(document)
         return result
@@ -158,7 +175,7 @@ async def data_to_list_newsarticle(response, include_text, scroller):
 
 
 async def build_query_text(client, id, author, title, minYear, maxYear, language, only_text, only_embeddings,
-                           include_text):
+                           include_text, combined_texts):
     query_parts = []
     response = "No data"
 
@@ -166,7 +183,7 @@ async def build_query_text(client, id, author, title, minYear, maxYear, language
         zw = await scroller_text(client=client, only_text=only_text, only_embeddings=only_embeddings,
                                  include_text=include_text)
         return await data_to_list_text(response=zw, only_text=only_text, only_embeddings=only_embeddings, scroller=True,
-                                       include_text=include_text)
+                                       include_text=include_text, combined_texts=combined_texts)
 
     if id:
         query_parts.append({"terms": {"_id": id}})
@@ -206,7 +223,7 @@ async def build_query_text(client, id, author, title, minYear, maxYear, language
                                                             "_source": ["id", "title", "author", "year", "language",
                                                                         "source"]})
     return await data_to_list_text(response=response, only_text=only_text, only_embeddings=only_embeddings,
-                                   scroller=False, include_text=include_text)
+                                   scroller=False, include_text=include_text, combined_texts=combined_texts)
 
 
 async def build_query_author(client, id, name, birth_place, country):
@@ -271,9 +288,9 @@ async def build_query_newsarticle(client, id, title, minDate, maxDate, source, a
 
 async def get_texts(client: Elasticsearch, id: list[str], title: list[str], minYear: int, maxYear: int,
                     author: list[str],
-                    language: str, only_text, only_embeddings, include_text):
+                    language: str, only_text, only_embeddings, include_text, combined_texts):
     return await build_query_text(client, id, author, title, minYear, maxYear, language, only_text, only_embeddings,
-                                  include_text)
+                                  include_text, combined_texts)
 
 
 async def get_authors(client: Elasticsearch, id: str, name: str, birth_place: str, country: str):
