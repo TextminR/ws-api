@@ -9,23 +9,7 @@ ES_HOST = "https://es.textminr.tech:9200"
 ES_USER = "elastic"
 ES_PASSWORD = "A_2LfPT*rVitjUvp0vwX"
 
-
-def split_string_with_limit(tokenizer, text: str, limit: int):
-    batch_dict = tokenizer(text, return_tensors="pt")
-    tokens = batch_dict["input_ids"].squeeze()
-    token_parts = [tokens[i : i + limit] for i in range(0, len(tokens), limit)]
-    text_parts = []
-
-    for part in token_parts:
-        if part.size(dim=0) > 2500:
-            text_part = [tokenizer.decode(token) for token in part]
-            decoded_text = tokenizer.decode(tokenizer.convert_tokens_to_ids(text_part))
-            text_parts.append(decoded_text)
-
-    return text_parts
-
-
-def main(input_dir: str, model_id: str, device_name: str, limit = 8150):
+def main(input_dir: str, model_id: str, device_name: str, limit = 2048):
     es = Elasticsearch([ES_HOST], basic_auth=(ES_USER, ES_PASSWORD), verify_certs=False)
     metadata = json.load(open(os.path.join(input_dir, "metadata.json")))
 
@@ -39,24 +23,24 @@ def main(input_dir: str, model_id: str, device_name: str, limit = 8150):
         index_start = text.find("\n", index_start) + 1
         index_end = text.find("** END")
         text = text[index_start:index_end]
-
+        
         batch_dict = tokenizer(text, return_tensors="pt")
         tokens = batch_dict["input_ids"].squeeze()
         token_parts = [tokens[i : i + limit] for i in range(0, len(tokens), limit)]
         parts = []
 
         for part in token_parts:
-            if part.size(dim=0) > 2500:
-                text_part = [tokenizer.decode(token) for token in part]
-                decoded_text = tokenizer.decode(tokenizer.convert_tokens_to_ids(text_part))
-                parts.append(decoded_text)
+            # if part.size(dim=0) > 2500:
+                # text_part = [tokenizer.decode(part)]
+                # decoded_text = tokenizer.decode(tokenizer.convert_tokens_to_ids(text_part))
+            parts.append(tokenizer.decode(part))
         
         if parts:
             embeddings = []
             text_parts = []
 
             for part in parts:
-                embeddings.append({"vector": model.encode(part)})
+                embeddings.append({"vector": model.encode(part, show_progress_bar=False)})
                 text_parts.append({"part": part})
 
             document = {
