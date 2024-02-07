@@ -49,7 +49,7 @@ def main(input_dir: str, model_id: str, device_name: str, limit = 2048):
                 "year": book["year"],
                 "language": book["language"],
                 "source": book["source"],
-                "text_parts": text_parts,
+                "text": text_parts,
                 "embeddings": embeddings,
             }
 
