@@ -29,9 +29,10 @@ async def texts(api_key: str = Security(get_api_key), id: Annotated[list, Query(
                 title: Annotated[list, Query()] = None, minYear: int = None,
                 maxYear: int = None,
                 author: Annotated[list, Query()] = None,
-                language: str = None, combined_texts: bool = False):
+                language: str = None):
     data = await crud.get_texts(client=ES, id=id, title=title, minYear=minYear, maxYear=maxYear, author=author,
-                                language=language, only_text=True, only_embeddings=False, include_text=False, combined_texts=combined_texts)
+                                language=language, only_text=True, only_embeddings=False, include_text=False,
+                                include_embeddings=False)
     return msg.Response(status="200", message="OK", data=data)
 
 
@@ -42,7 +43,8 @@ async def text_metadata(api_key: str = Security(get_api_key), id: Annotated[list
                         author: Annotated[list, Query()] = None,
                         language: str = None):
     data = await crud.get_texts(client=ES, id=id, title=title, minYear=minYear, maxYear=maxYear, author=author,
-                                language=language, only_text=False, only_embeddings=False, include_text=False, combined_texts=False)
+                                language=language, only_text=False, only_embeddings=False, include_text=False,
+                                include_embeddings=False)
     return msg.Response(status="200", message="OK", data=data)
 
 
@@ -51,9 +53,22 @@ async def text_metadata_with_texts(api_key: str = Security(get_api_key), id: Ann
                                    title: Annotated[list, Query()] = None,
                                    minYear: int = None, maxYear: int = None,
                                    author: Annotated[list, Query()] = None,
-                                   language: str = None, combined_texts: bool = False):
+                                   language: str = None):
     data = await crud.get_texts(client=ES, id=id, title=title, minYear=minYear, maxYear=maxYear, author=author,
-                                language=language, only_text=False, only_embeddings=False, include_text=True, combined_texts=combined_texts)
+                                language=language, only_text=False, only_embeddings=False, include_text=True,
+                                include_embeddings=False)
+    return msg.Response(status="200", message="OK", data=data)
+
+
+@app.get("/texts/metadata_with_embeddings", response_model=msg.Response)
+async def text_metadata_with_texts(api_key: str = Security(get_api_key), id: Annotated[list, Query()] = None,
+                                   title: Annotated[list, Query()] = None,
+                                   minYear: int = None, maxYear: int = None,
+                                   author: Annotated[list, Query()] = None,
+                                   language: str = None):
+    data = await crud.get_texts(client=ES, id=id, title=title, minYear=minYear, maxYear=maxYear, author=author,
+                                language=language, only_text=False, only_embeddings=False, include_text=False,
+                                include_embeddings=True)
     return msg.Response(status="200", message="OK", data=data)
 
 
@@ -64,7 +79,8 @@ async def text_metadata(api_key: str = Security(get_api_key), id: Annotated[list
                         author: Annotated[list, Query()] = None,
                         language: str = None):
     data = await crud.get_texts(client=ES, id=id, title=title, minYear=minYear, maxYear=maxYear, author=author,
-                                language=language, only_text=False, only_embeddings=True, include_text=False, combined_texts=False)
+                                language=language, only_text=False, only_embeddings=True, include_text=False,
+                                include_embeddings=False)
     return msg.Response(status="200", message="OK", data=data)
 
 
