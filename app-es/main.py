@@ -29,10 +29,10 @@ async def texts(api_key: str = Security(get_api_key), id: Annotated[list, Query(
                 title: Annotated[list, Query()] = None, minYear: int = None,
                 maxYear: int = None,
                 author: Annotated[list, Query()] = None,
-                language: str = None):
+                language: str = None, sampled: bool = False):
     data = await crud.get_texts(client=ES, id=id, title=title, minYear=minYear, maxYear=maxYear, author=author,
                                 language=language, only_text=True, only_embeddings=False, include_text=False,
-                                include_embeddings=False)
+                                include_embeddings=False, sampled=sampled)
     return msg.Response(status="200", message="OK", data=data)
 
 
@@ -44,7 +44,7 @@ async def text_metadata(api_key: str = Security(get_api_key), id: Annotated[list
                         language: str = None):
     data = await crud.get_texts(client=ES, id=id, title=title, minYear=minYear, maxYear=maxYear, author=author,
                                 language=language, only_text=False, only_embeddings=False, include_text=False,
-                                include_embeddings=False)
+                                include_embeddings=False, sampled=False)
     return msg.Response(status="200", message="OK", data=data)
 
 
@@ -53,10 +53,10 @@ async def text_metadata_with_texts(api_key: str = Security(get_api_key), id: Ann
                                    title: Annotated[list, Query()] = None,
                                    minYear: int = None, maxYear: int = None,
                                    author: Annotated[list, Query()] = None,
-                                   language: str = None):
+                                   language: str = None, sampled: bool = False):
     data = await crud.get_texts(client=ES, id=id, title=title, minYear=minYear, maxYear=maxYear, author=author,
                                 language=language, only_text=False, only_embeddings=False, include_text=True,
-                                include_embeddings=False)
+                                include_embeddings=False, sampled=sampled)
     return msg.Response(status="200", message="OK", data=data)
 
 

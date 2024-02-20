@@ -11,6 +11,7 @@ def get_es_client():
     es = AsyncElasticsearch(
         [f"https://{ELASTIC_HOST}:{ELASTIC_PORT}"],
         basic_auth=(ELASTIC_USER, ELASTIC_PASSWORD),
-        verify_certs=False
+        verify_certs=False,
+        request_timeout=60
     )
     return es
