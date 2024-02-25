@@ -2,7 +2,7 @@ from elasticsearch import Elasticsearch
 from elasticsearch.helpers import async_scan
 
 
-async def scroller_text(client, only_text, only_embeddings, include_text, include_embeddings):
+async def scroller_text(client, only_text, only_embeddings, include_text, include_embeddings, sampled):
     result = []
     if only_embeddings:
         async for hit in async_scan(
@@ -25,7 +25,7 @@ async def scroller_text(client, only_text, only_embeddings, include_text, includ
             result.append(hit)
 
 
-    elif not only_text and not only_embeddings:
+    elif not only_text and not only_embeddings and not sampled:
         async for hit in async_scan(
                 client,
                 query={"query": {"match_all": {}},
@@ -37,15 +37,42 @@ async def scroller_text(client, only_text, only_embeddings, include_text, includ
             result.append(hit)
 
     elif include_text:
-        async for hit in async_scan(
-                client,
-                query={"query": {"match_all": {}},
-                       "_source": ["author", "title", "year", "language", "source", "text"]},
-                index="texts",
-                scroll="1m",
-                size=1000
-        ):
-            result.append(hit)
+
+        if sampled:
+            sampler = {
+                "middle_part": {
+                    "script": {
+                        "source": """
+                                        def fifthPart = null;
+                                        def textArray = params['_source']['text'];
+                                        if (textArray != null && textArray.size() > 2) {
+                                            fifthPart = textArray[textArray.size()/2].part;
+                                        }
+                                    return fifthPart;
+                                    """
+                    }
+                }
+            }
+            async for hit in async_scan(
+                    client,
+                    query={"query": {"match_all": {}},
+                           "_source": ["author", "title", "year", "language", "source"], "script_fields": sampler},
+                    index="texts",
+                    scroll="1m",
+                    size=1000
+            ):
+                result.append(hit)
+
+        else:
+            async for hit in async_scan(
+                    client,
+                    query={"query": {"match_all": {}},
+                           "_source": ["author", "title", "year", "language", "source", "text"]},
+                    index="texts",
+                    scroll="1m",
+                    size=1000
+            ):
+                result.append(hit)
 
     elif include_embeddings:
         async for hit in async_scan(
